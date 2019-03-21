@@ -1,13 +1,16 @@
-var minRange;
-var maxRange;
-var updateRangeButton;
-var challengerOneName;
-var challengerOneGuess;
-var challengerTwoName;
-var challengerTwoGuess;
-var submitGuessButton;
-var resetGameButton;
-var clearGameButton;
-var challengerOne;
-
-/* comment here*/
+var minRangeInput = document.getElementById("min-range-input");
+var maxRangeInput = document.getElementById("max-range-input");
+var minRangeDisplay = document.getElementById("low-range-display")
+var maxRangeDisplay = document.getElementById("high-range-display")
+var updateRangeButton = document.getElementById("update-range-button");
+var challengerOneNameInput = document.getElementById("challenger-one-name")
+var challengerOneGuessInput = document.getElementById("challenger-one-guess");
+var NameDisplayOne = document.getElementById("challenger-one-name-display");
+var challengerTwoNameInput = document.getElementById("challenger-two-name");
+var challengerTwoGuessInput = document.getElementById("challenger-two-guess");
+var NameDisplayTwo = document.getElementById("challenger-two-name-display");
+var submitButton = document.getElementById("submit-button");
+var resetButton = document.getElementById("reset-button");
+var clearButton = document.getElementById("clear-button");
+var challengerOneGuessDisplay = document.getElementById("challenger-one-current-guess");
+var challengerTwoGuessDisplay = document.getElementById("challenger-two-current-guess");
