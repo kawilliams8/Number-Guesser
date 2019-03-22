@@ -1,26 +1,26 @@
 //Global variables
-var minRangeInput = document.querySelector("#min-range-input");
-var maxRangeInput = document.getElementById("max-range-input");
-var minRangeDisplay = document.getElementById("low-range-display")
-var maxRangeDisplay = document.getElementById("high-range-display")
-var updateRangeButton = document.getElementById("update-range-button");
-var challengerOneNameInput = document.getElementById("challenger-one-name")
-var challengerOneGuessInput = document.getElementById("challenger-one-guess");
-var NameDisplayOne = document.getElementById("challenger-one-name-display");
-var challengerTwoNameInput = document.getElementById("challenger-two-name");
-var challengerTwoGuessInput = document.getElementById("challenger-two-guess");
-var NameDisplayTwo = document.getElementById("challenger-two-name-display");
-var submitButton = document.getElementById("submit-button");
-var resetButton = document.getElementById("reset-button");
-var clearButton = document.getElementById("clear-button");
-var challengerOneGuessDisplay = document.getElementById("challenger-one-current-guess");
-var challengerTwoGuessDisplay = document.getElementById("challenger-two-current-guess");
+var minRangeInput = document.querySelector(".min-range-input");
+var maxRangeInput = document.querySelector(".max-range-input");
+var minRangeDisplay = document.querySelector("low-range-display"); //added later
+var maxRangeDisplay = document.querySelector("high-range-display"); //added later
+var updateRangeButton = document.querySelector(".update-btn");
+var challengerOneNameInput = document.querySelector(".name-input-one");
+var challengerOneGuessInput = document.querySelector(".guess-input-one");
+var nameDisplayOne = document.querySelector(".challenger-one-name-display");
+var challengerTwoNameInput = document.querySelector(".name-input-two");
+var challengerTwoGuessInput = document.querySelector(".guess-input-two");
+var nameDisplayTwo = document.querySelector(".challenger-two-name");
+var submitButton = document.querySelector(".submit-guess-btn");
+var resetButton = document.querySelector(".submit-reset-btn");
+var clearButton = document.querySelector(".submit-clear-btn");
+var challengerOneGuessDisplay = document.querySelector(".guess-output-one");
+var challengerTwoGuessDisplay = document.querySelector(".guess-output-two");
 var randomNumber;
 var minValue = 1;
 var maxValue = 100;
-var challengerOneGuessComparison = document.getElementById("comparison-result-1");
-var challengerTwoGuessComparison = document.getElementById("comparison-result-2");
-var resultsCard = document.querySelector(".results-card");
+var challengerOneGuessComparison = document.querySelector(".gues-note-one");
+var challengerTwoGuessComparison = document.querySelector(".gues-note-two");
+var resultsCard = document.querySelector(".card");
 //Event listeners
 submitButton.addEventListener("click", submitNamesGuesses);
 updateRangeButton.addEventListener("click", updateRange);
@@ -46,8 +46,8 @@ function submitNamesGuesses(){
   var guessOne = challengerOneGuessInput.value;
   var nameTwo = challengerTwoNameInput.value;
   var guessTwo = challengerTwoGuessInput.value;
-  NameDisplayOne.innerText = nameOne;
-  NameDisplayTwo.innerText = nameTwo;
+  nameDisplayOne.innerText = nameOne;
+  nameDisplayTwo.innerText = nameTwo;
   var guessOneDisplay = challengerOneGuessInput.value;
   var guessTwoDisplay = challengerTwoGuessInput.value;
   challengerOneGuessDisplay.innerText = guessOneDisplay;
