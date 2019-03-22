@@ -2,52 +2,416 @@
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
+  border: 0px solid red;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  background-color: #f7f7f7;
+}
+
+.part-one {
+  background-color: #f7f7f7;
+  height: 1285px;
 }
 
 header {
-  font-family: verdana;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
-  height: 100px;
+  height: 80px;
   background-color: #404041;
 }
 
 .heading-section {
   display: flex;
   justify-content: center;
-  border: 1px solid red;
-  height: 30px;
+  height: 35px;
   position: relative;
+  color: #fff;
+  width: 100%;
 }
 
 .first-heading {
   font-weight: 700;
-  font-size: 1.5em;
+  font-size: 2em;
+  color: #DD1972;
 }
 
 .first-heading-two {
- 
+  font-weight: 300;
 }
 
 .header-line {
   background-color: white;
   height: 2px;
-  width: 100%;
+  width: 272px;
   position: absolute;
-  margin-top: 13px;
+  margin-top: 14px;
 }
 
 .second-heading {
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: 300;
   position: absolute;
   margin-top: 5px;
   background-color: #404041;
+  width: 220px;
+  text-align: center;
+  color: #fff;
 }
 
-/* thi sis a commentttt */
+/*body starts here  */
+
+.set-range-section {
+  border: 1px solid #D0D2D3;
+  height: 230px;
+  padding: 10px;
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 0.5em;
+  background-color: #fff;
+}
+
+input {
+  border: rgba(0,0,0,0.1) solid 1px;
+  width: 100%;
+  height: 30px;
+  outline: none;
+  padding-left: 10px;
+}
+
+input,
+p {
+  margin-bottom: 1.3em;
+  color: #404041;
+}
+
+h4 {
+  margin-bottom: 0.8em;
+}
+
+.btn {
+  width: 100px;
+  height: 35px;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 12px;
+  background-color: #D0D2D3;
+  outline: none;
+}
+
+.btn:hover {
+  background-color: #dd1972;
+  cursor: pointer;
+}
+
+label {
+  color: gray;
+}
+
+/* the gaming section starts here */
+
+.playing_section {
+
+  border: 1px solid #D0D2D3;
+  height: 550px;
+  padding: 10px;
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 0.5em;
+  background-color: #fff;
+}
+
+.playing-section-heading {
+  font-weight: 300;
+  margin-bottom: 1.3em;
+  color: #404041;
+}
+
+.game-btn {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/* latest score starts here */
+
+.latest-score-section {
+  border: 1px solid #D0D2D3;
+  height: 480px;
+  padding: 10px;
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.latest-score-section-heading {
+  margin-right: auto;
+}
+
+.bottom-line {
+  background-color: red;
+  width: 85%;
+  height: 2px;
+  margin-bottom: 10px;
+  position: absolute;
+}
+
+.guess-output {
+  font-weight: 700;
+  font-size: 95px;
+  color: #F74D9B;
+  margin-bottom: -10px;
+  margin-top: -30px;
+  background-color: transparent;
+}
+
+/* part two starts here */
+
+.part-two {
+  background-color: rgb(209,210,212);
+}
+
+.card {
+  border: 1px solid #404041;
+  height: 215px;
+  padding: 10px;
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: ;
+  color: gray;
+}
+
+.winner-container {
+  border-bottom: 2px solid rgba(0,0,0,0.2);
+  border-top: 2px solid rgba(0,0,0,0.2);
+  text-align: center;
+  width: 100%;
+  height: 93px;
+  padding-top: 15px;
+  margin-top: 10px;
+}
+
+.extensions {
+  display: flex;
+  height: 33px;
+  padding-top: 5px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.close-btn {
+  width: 18px;
+  height: 18px;
+  background-color: gray;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+}
+
+.extensions-text {
+  font-size: 14px;
+}
+
+.card-challengers-container {
+  text-align: center;
+  height: 70px;
+}
+
+.card-challengers-vs {
+  margin-top: -10px;
+}
+
+.latest-score-section-parts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+@media only screen and (min-width: 736px) {
+  main {
+    display: flex;
+  }
+
+  
+
+  .heading-section {
+    height: 50px;
+    width: 100%;
+  }
+
+  .first-heading {
+    font-size: 3em;
+    color: #DD1972;
+  }
+
+  .header-line {
+    height: 1px;
+    width: 410px;
+    margin-top: 18px;
+  }
+
+  .second-heading {
+    font-size: 1.1em;
+    margin-top: 7px;
+    width: 280px;
+  }
+
+/*header */
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  background-color: #404041;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+  /*body starts here */
+
+  .part-one,
+  .part-two {
+    width: 50%;
+    height: 713px;
+    margin-top: 100px;
+  }
+
+  .part-two {
+  overflow: scroll;
+  height: 720px;
+  }
+
+  .set-range-section-part-one,
+  .set-range-section-part-two,
+  .set-range-section-part-three {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 70px;
+  }
+
+  .set-range-section-part-three {
+    height: 70px;
+    width: 20%;
+    padding-bottom: 14px;
+    display: flex;
+    align-items: center;
+  }
+ 
+  input {
+    width: 95%
+  }
+
+  .set-range-section-body {
+    width: 100%;
+    display: flex;
+    margin-top: -10px;
+  }
+
+  .set-range-section {
+    height: 100px;
+  }
+
+  .update-btn {
+    width: 110%;
+    height: 30px;
+    max-width: 100px;
+  }
+
+  .name-input-one
+  .guess-input-one {
+    width: 50%;
+  }
+
+  .playing-section-part {
+    display: flex;
+    height: 80px;
+  }
+
+  .playing-section-part-1 {
+    width: 70%;
+  }
+
+  .playing-section-part-2 {
+    width: 30%;
+  }
+
+  .playing-section-part-buttons {
+    display: flex;
+    justify-content: space-around;
+    height: 90px;
+    margin-top: -10px;
+  }
+
+  button.game-btn {
+     width: 30%;
+  }
+
+  .playing_section {
+    height: 330px;
+  }
+
+  .card {
+    height: 165px;
+    width: 88%;
+  }
+
+  .card-challengers-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 20px;
+    padding-top: 10px;
+  }
+
+  /* latest score starts here*/
+
+ .latest-score-section {
+  height: 250px;
+  position: relative;
+ }
+
+ .latest-score-section-parts-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1.2em;
+ }
+
+ .latest-score-section-parts {
+    display: flex;
+    justify-content: center;
+    width: 45%;
+  }
+
+
+}
