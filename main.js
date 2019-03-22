@@ -1,8 +1,8 @@
 //Global variables
 var minRangeInput = document.querySelector(".min-range-input");
 var maxRangeInput = document.querySelector(".max-range-input");
-var minRangeDisplay = document.querySelector("low-range-display"); //added later
-var maxRangeDisplay = document.querySelector("high-range-display"); //added later
+var minRangeDisplay = document.querySelector(".low-range-display"); //added later
+var maxRangeDisplay = document.querySelector(".high-range-display"); //added later
 var updateRangeButton = document.querySelector(".update-btn");
 var challengerOneNameInput = document.querySelector(".name-input-one");
 var challengerOneGuessInput = document.querySelector(".guess-input-one");
@@ -35,8 +35,9 @@ function createRandomNumber() {
 
 function updateRange() {
   minValue = parseInt(minRangeInput.value);
-  x = parseInt(maxRangeInput.value);
-  console.log(parseInt(minRangeInput.value));
+  maxValue = parseInt(maxRangeInput.value);
+
+  
 };
 
 //Get names/guesses, then display names/guesses
