@@ -1,13 +1,99 @@
-var minRange;
-var maxRange;
-var updateRangeButton;
-var challengerOneName;
-var challengerOneGuess;
-var challengerTwoName;
-var challengerTwoGuess;
-var submitGuessButton;
-var resetGameButton;
-var clearGameButton;
-var challengerOne;
+//Global variables
+var minRangeInput = document.querySelector("#min-range-input");
+var maxRangeInput = document.getElementById("max-range-input");
+var minRangeDisplay = document.getElementById("low-range-display")
+var maxRangeDisplay = document.getElementById("high-range-display")
+var updateRangeButton = document.getElementById("update-range-button");
+var challengerOneNameInput = document.getElementById("challenger-one-name")
+var challengerOneGuessInput = document.getElementById("challenger-one-guess");
+var NameDisplayOne = document.getElementById("challenger-one-name-display");
+var challengerTwoNameInput = document.getElementById("challenger-two-name");
+var challengerTwoGuessInput = document.getElementById("challenger-two-guess");
+var NameDisplayTwo = document.getElementById("challenger-two-name-display");
+var submitButton = document.getElementById("submit-button");
+var resetButton = document.getElementById("reset-button");
+var clearButton = document.getElementById("clear-button");
+var challengerOneGuessDisplay = document.getElementById("challenger-one-current-guess");
+var challengerTwoGuessDisplay = document.getElementById("challenger-two-current-guess");
+var randomNumber;
+var minValue = 1;
+var maxValue = 100;
+var challengerOneGuessComparison = document.getElementById("comparison-result-1");
+var challengerTwoGuessComparison = document.getElementById("comparison-result-2");
+var resultsCard = document.querySelector(".results-card");
+//Event listeners
+submitButton.addEventListener("click", submitNamesGuesses);
+updateRangeButton.addEventListener("click", updateRange);
+// updateRangeButton.addEventListener("click", updateRanges);
 
-/* comment here*/
+// Generate random number
+function createRandomNumber() {
+	var random = Math.floor((Math.random() * ((maxValue - minValue) + 1)) + minValue);
+  randomNumber = random;
+  console.log(randomNumber);
+  }
+
+function updateRange() {
+  minValue = parseInt(minRangeInput.value);
+  x = parseInt(maxRangeInput.value);
+  console.log(parseInt(minRangeInput.value));
+};
+
+//Get names/guesses, then display names/guesses
+function submitNamesGuesses(){
+  checkGuesses();
+  var nameOne = challengerOneNameInput.value;
+  var guessOne = challengerOneGuessInput.value;
+  var nameTwo = challengerTwoNameInput.value;
+  var guessTwo = challengerTwoGuessInput.value;
+  NameDisplayOne.innerText = nameOne;
+  NameDisplayTwo.innerText = nameTwo;
+  var guessOneDisplay = challengerOneGuessInput.value;
+  var guessTwoDisplay = challengerTwoGuessInput.value;
+  challengerOneGuessDisplay.innerText = guessOneDisplay;
+  challengerTwoGuessDisplay.innerText = guessTwoDisplay;
+}
+
+function checkGuesses() {
+    if (challengerOneGuessInput.value == randomNumber && 
+      challengerTwoGuessInput.value == randomNumber) {
+      challengerOneGuessComparison.innerText = "It's a tie!";
+      challengerTwoGuessComparison.innerText = "It's a tie!";
+  } else if (challengerOneGuessInput.value == randomNumber) {
+      challengerOneGuessComparison.innerText = "Boom!";
+      addCard()
+  } else if (challengerTwoGuessInput.value == randomNumber) {
+      challengerTwoGuessComparison.innerText = "Boom!";
+      addCard()
+  } else if (challengerOneGuessInput.value > randomNumber && 
+      challengerTwoGuessInput.value > randomNumber) {
+      challengerOneGuessComparison.innerText = "that's too high";
+      challengerTwoGuessComparison.innerText = "that's too high";
+  } else if (challengerOneGuessInput.value > randomNumber && 
+      challengerTwoGuessInput.value < randomNumber) {
+      challengerOneGuessComparison.innerText = "that's too high";
+      challengerTwoGuessComparison.innerText = "that's too low";
+  } else if (challengerOneGuessInput.value < randomNumber && 
+      challengerTwoGuessInput.value < randomNumber) {
+      challengerOneGuessComparison.innerText = "that's too low";
+      challengerTwoGuessComparison.innerText = "that's too low";
+  } else if (challengerOneGuessInput.value < randomNumber && 
+      challengerTwoGuessInput.value > randomNumber) {
+      challengerOneGuessComparison.innerText = "that's too low";
+      challengerTwoGuessComparison.innerText = "that's too high";
+  } else if (challengerTwoGuessInput.value > randomNumber) {
+      challengerTwoGuessComparison.innerText = "that's too high";
+  } else {
+    return;
+  };
+};
+
+function addCard() {
+  resultsCard.innerHTML += `
+      <div style="height:150px;width:400px;border:2px solid grey;">
+        <h3>This is the H3</h3>
+        <p>Paragraph</p>
+      </div>`;
+};
+
+// window.onload = createRandomNumber();
