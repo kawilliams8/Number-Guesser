@@ -20,47 +20,47 @@
   </header>
   <main>
   	<section>
-  		<section>
-  			<h3>Set Range</h3>
-  			<label for="">Min Range</label>
-  			<input type="text">
-			<label for="">Max Range</label>
-  			<input type="text">
-  			<button>UPDATE</button>
-  		</section>
-  		<section>
-  			<h3>The Current Range is 1 to 100</h3>
-  			<h3>Challenger 1</h3>
-  			<label for="">Name</label>
-  			<input type="text">
-  			<label for="">Guess</label>
-  			<input type="text">
-  			<p></p>
-  			<h3>Challenger 2</h3>
-  			<label for="">Name</label>
-  			<input type="text">
-  			<label for="">Guess</label>
-  			<input type="text">
-  			<p></p>
-  			<button>SUBMIT GUESS</button>
-  			<button>RESET GAME</button>
-  			<button>CLEAR GAME</button>
-  		</section>
-  		<section>
-  			<h3>Latest Score</h3>
-  			<h3>Challenger 1 Name</h3>
-  			<p>current guess</p>
-  			<p>00</p>
-  			<p>that's too high</p>
-  			<h3>Challenger 2 Name</h3>
-  			<p>current guess</p>
-  			<p>99</p>
-  			<p>that's too high</p>
-  		</section>
-  	</section>
-  	<section>
-  		<div>Results Card</div>
-  	</section>
+      <section>
+        <h3>Set Range</h3>
+        <label for="min-range-input">Min Range</label>
+        <input type="number" id="min-range-input">
+      <label for="max-range-input">Max Range</label>
+        <input type="number" id="max-range-input">
+        <button id="update-range-button">UPDATE</button>
+      </section>
+      <section>
+        <h3>The Current Range is <span id="low-range-display">1</span> to <span id="high-range-display">100</span>.</h3>
+        <h3>Challenger 1</h3>
+        <label for="challenger-one-name">Name</label>
+        <input type="text" id="challenger-one-name">
+        <label for="challenger-one-guess">Guess</label>
+        <input type="number" id="challenger-one-guess">
+        <p>Error message</p>
+        <h3>Challenger 2</h3>
+        <label for="challenger-two-name">Name</label>
+        <input type="text" id="challenger-two-name">
+        <label for="challenger-two-guess">Guess</label>
+        <input type="number" id="challenger-two-guess">
+        <p>Error message</p>
+        <button id="submit-button">SUBMIT GUESS</button>
+        <button id="reset-button">RESET GAME</button>
+        <button id="clear-button">CLEAR GAME</button>
+      </section>
+      <section>
+        <h3>Latest Score</h3>
+        <h3><span id="challenger-one-name-display">Challenger 1 Name</span></h3>
+        <p>current guess</p>
+        <p class="current-guess" id="challenger-one-current-guess">—</p>
+        <p id="comparison-result-1">—</p>
+        <h3 id="challenger-two-name-display">Challenger 2 Name</h3>
+        <p>current guess</p>
+        <p class="current-guess" id="challenger-two-current-guess">—</p>
+        <p id="comparison-result-2">—</p>
+      </section>
+    </section>
+    <section>
+      <div>Results Card</div>
+    </section>
   </main>
   <script type="text/javascript" src="main.js"></script>
 </body>
