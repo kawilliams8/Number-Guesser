@@ -7,6 +7,62 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
 </head>
 <body>
+  <header>
+  	<section>
+  		<section class="heading-section">
+  			<h1 class="first-heading">NUMBER <span class="first-heading-two">GUESSER</span></h1>
+  		</section>
+  		<section class="heading-section">
+  			<div class="header-line"></div>
+  			<h2 class="second-heading">ULTIMATE CHALLENGER EDITION</h2>
+  		</section>
+  	</section>
+  </header>
+  <main>
+  	<section>
+      <section>
+        <h3>Set Range</h3>
+        <label for="min-range-input">Min Range</label>
+        <input type="number" id="min-range-input">
+      <label for="max-range-input">Max Range</label>
+        <input type="number" id="max-range-input">
+        <button id="update-range-button">UPDATE</button>
+      </section>
+      <section>
+        <h3>The Current Range is <span id="low-range-display">1</span> to <span id="high-range-display">100</span>.</h3>
+        <h3>Challenger 1</h3>
+        <label for="challenger-one-name">Name</label>
+        <input type="text" id="challenger-one-name">
+        <label for="challenger-one-guess">Guess</label>
+        <input type="number" id="challenger-one-guess">
+        <p>Error message</p>
+        <h3>Challenger 2</h3>
+        <label for="challenger-two-name">Name</label>
+        <input type="text" id="challenger-two-name">
+        <label for="challenger-two-guess">Guess</label>
+        <input type="number" id="challenger-two-guess">
+        <p>Error message</p>
+        <button id="submit-button">SUBMIT GUESS</button>
+        <button id="reset-button">RESET GAME</button>
+        <button id="clear-button">CLEAR GAME</button>
+      </section>
+      <section>
+        <h3>Latest Score</h3>
+        <h3><span id="challenger-one-name-display">Challenger 1 Name</span></h3>
+        <p>current guess</p>
+        <p class="current-guess" id="challenger-one-current-guess">—</p>
+        <p id="comparison-result-1">—</p>
+        <h3 id="challenger-two-name-display">Challenger 2 Name</h3>
+        <p>current guess</p>
+        <p class="current-guess" id="challenger-two-current-guess">—</p>
+        <p id="comparison-result-2">—</p>
+      </section>
+    </section>
+    <section>
+      <div>Results Card</div>
+    </section>
+  </main>
+  <script type="text/javascript" src="main.js"></script>
 <header>
 	<section>
 		<section class="heading-section">
@@ -36,8 +92,8 @@
         </div>
       </div>
 		</section>
-		<section class="playing_section">
-			<h4 class="playing-section-heading">The Current Range is 1 to 100</h4>
+		<section class="playing-section">
+			<h4 class="playing-section-heading">The Current Range is <span class="low-range-display">1</span> to <span class="high-range-display">100</span></h4>
 			<h4>Challenger 1</h4>
       <div class="playing-section-part">
         <div class="playing-section-part-1">
@@ -53,11 +109,11 @@
       <div class="playing-section-part">
         <div class="playing-section-part-1">
     			<label for="">Name</label>
-    			<input type="text">
+    			<input class="name-input-two" type="text">
         </div>
         <div class="playing-section-part-2">
     			<label for="">Guess</label>
-    			<input type="text">
+    			<input class="guess-input-two" type="text">
         </div>
       </div>
         <div class="playing-section-part-buttons">
@@ -70,16 +126,16 @@
 			<h3 class="latest-score-section-heading">Latest Score</h3>
         <div class="latest-score-section-parts-container">
         <div class="latest-score-section-parts">
-    			<h4>Challenger 1 Name</h4>
+    			<h4 class="challenger-one-name-display">Challenger 1 Name</h4>
     			<p>current guess</p>
-    			<p class="guess-output guess-output-one">00</p>
-    			<p class="gues-note-one">that's too high</p>
+    			<p class="guess-output guess-output-one">—</p>
+    			<p class="gues-note-one">—</p>
         </div>
         <div class="latest-score-section-parts">
-    			<h4>Challenger 2 Name</h4>
+    			<h4 class="challenger-two-name">Challenger 2 Name</h4>
     			<p>current guess</p>
-    			<p class="guess-output guess-output-two">99</p>
-    			<p class="gues-note-two">that's too high</p>
+    			<p class="guess-output guess-output-two">—</p>
+    			<p class="gues-note-two">—</p>
         </div>
         </div>
         <div class="bottom-line"></div>
@@ -87,7 +143,7 @@
 	</section >
 	<section class="part-two">
 		<div class="card-hub">
-      <div class="card">
+      <!-- <div class="card">
         <div class="card-challengers-container">
           <h4>Challenger 1 Name</h4>
           <div class="card-challengers-vs">VS</div>
@@ -103,7 +159,7 @@
           <span class="close-btn">&times;</span>
         </div>
       </div>  
-    </div>
+    </div> -->
 	</section>
 </main>
 <script type="text/javascript" src="main.js"></script>
