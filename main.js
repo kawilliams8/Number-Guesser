@@ -43,13 +43,8 @@ function updateRange() {
 //Get names/guesses, then display names/guesses
 function submitNamesGuesses(){
   checkGuesses();
-  var nameOne = challengerOneNameInput.value;
-  console.log(challengerOneNameInput.value);
-  var guessOne = challengerOneGuessInput.value;
-  var nameTwo = challengerTwoNameInput.value;
-  var guessTwo = challengerTwoGuessInput.value;
-  nameDisplayOne.innerText = nameOne;
-  nameDisplayTwo.innerText = nameTwo;
+  nameDisplayOne.innerText = challengerOneNameInput.value;
+  nameDisplayTwo.innerText = challengerTwoNameInput.value;
   var guessOneDisplay = challengerOneGuessInput.value;
   var guessTwoDisplay = challengerTwoGuessInput.value;
   challengerOneGuessDisplay.innerText = guessOneDisplay;
