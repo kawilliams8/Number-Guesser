@@ -17,8 +17,8 @@ var challengerOneGuessDisplay = document.querySelector(".guess-output-one");
 var challengerTwoGuessDisplay = document.querySelector(".guess-output-two");
 var randomNumber;
 var minValue = 1;
-var maxValue = 5;
-var winner = 'ONE!';
+var maxValue = 100;
+var winner;
 var challengerOneGuessComparison = document.querySelector(".gues-note-one");
 var challengerTwoGuessComparison = document.querySelector(".gues-note-two");
 var resultsCard = document.querySelector(".card-hub");
@@ -26,24 +26,40 @@ var resultsCard = document.querySelector(".card-hub");
 //Event listeners
 updateRangeButton.addEventListener("click", updateRange);
 submitButton.addEventListener("click", submitNamesGuesses);
-window.addEventListener('load', createRandomNumber);
+window.addEventListener("load", createRandomNumber);
 // resetButton.addEventListener("click", resetGame);
 clearButton.addEventListener("click", clearGame);
 
 // Generate random number
 function createRandomNumber() {
-	var random = Math.floor((Math.random() * ((maxValue - minValue) + 1)) + minValue);
-  randomNumber = random;
+
+	var randomNumber = Math.floor((Math.random() * ((maxValue - minValue) + 1)) + minValue);
   console.log(randomNumber);
   }
-
 function updateRange() {
-  minValue = parseInt(minRangeInput.value);
-  maxValue = parseInt(maxRangeInput.value);
-  minRangeDisplay.innerText = minValue;
-  maxRangeDisplay.innerText = maxValue;
-  console.log(minValue);
-  console.log(maxValue);
+
+  if (minRangeInput.value != "" && maxRangeInput.value != "") {
+      minValue = minRangeInput.value;
+      maxValue = maxRangeInput.value;
+      minRangeDisplay.innerText = minRangeInput.value;
+      maxRangeDisplay.innerText = maxRangeInput.value;
+  } else if (minRangeInput.value == "" && maxRangeInput.value != "") {
+      minValue = 1;
+      maxValue = maxRangeInput.value;
+      minRangeDisplay.innerText = 1;
+      maxRangeDisplay.innerText = maxRangeInput.value;
+  } else if (minRangeInput.value != "" && maxRangeInput.value == "") {
+      minValue = minRangeInput.value;
+      maxValue = 100;
+      minRangeDisplay.innerText = minRangeInput.value;
+      maxRangeDisplay.innerText = 100;
+  } else {
+      minValue = 1;
+      maxValue = 100;
+      minRangeDisplay.innerText = 1;
+      maxRangeDisplay.innerText = 100;
+  }
+createRandomNumber()
 };
 
 //Get names/guesses, then display names/guesses
