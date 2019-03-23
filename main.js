@@ -1,33 +1,36 @@
 //Global variables
 var minRangeInput = document.querySelector(".min-range-input");
 var maxRangeInput = document.querySelector(".max-range-input");
-var minRangeDisplay = document.getElementById("low-range-display")
-var maxRangeDisplay = document.getElementById("high-range-display")
-var updateRangeButton = document.getElementById("update-range-button");
-var challengerOneNameInput = document.getElementById("challenger-one-name")
-var challengerOneGuessInput = document.getElementById("challenger-one-guess");
-var NameDisplayOne = document.getElementById("challenger-one-name-display");
-var challengerTwoNameInput = document.getElementById("challenger-two-name");
-var challengerTwoGuessInput = document.getElementById("challenger-two-guess");
-var NameDisplayTwo = document.getElementById("challenger-two-name-display");
-var submitButton = document.getElementById("submit-button");
-var resetButton = document.getElementById("reset-button");
-var clearButton = document.getElementById("clear-button");
-var challengerOneGuessDisplay = document.getElementById("challenger-one-current-guess");
-var challengerTwoGuessDisplay = document.getElementById("challenger-two-current-guess");
+var minRangeDisplay = document.querySelector(".low-range-display"); //added later
+var maxRangeDisplay = document.querySelector(".high-range-display"); //added later
+var updateRangeButton = document.querySelector(".update-btn");
+var challengerOneNameInput = document.querySelector(".name-input-one");
+var challengerOneGuessInput = document.querySelector(".guess-input-one");
+var nameDisplayOne = document.querySelector(".challenger-one-name-display");
+var challengerTwoNameInput = document.querySelector(".name-input-two");
+var challengerTwoGuessInput = document.querySelector(".guess-input-two");
+var nameDisplayTwo = document.querySelector(".challenger-two-name");
+var submitButton = document.querySelector(".submit-guess-btn");
+var resetButton = document.querySelector(".submit-reset-btn");
+var clearButton = document.querySelector(".submit-clear-btn");
+var challengerOneGuessDisplay = document.querySelector(".guess-output-one");
+var challengerTwoGuessDisplay = document.querySelector(".guess-output-two");
+
 //Event listeners
 
 
 var randomNumber;
 var minValue = 1;
-var maxValue = 100;
-var challengerOneGuessComparison = document.getElementById("comparison-result-1");
-var challengerTwoGuessComparison = document.getElementById("comparison-result-2");
-var resultsCard = document.querySelector(".results-card");
+var maxValue = 5;
+var challengerOneGuessComparison = document.querySelector(".gues-note-one");
+var challengerTwoGuessComparison = document.querySelector(".gues-note-two");
+var resultsCard = document.querySelector(".card-hub");
+
 //Event listeners
-submitButton.addEventListener("click", submitNamesGuesses);
 updateRangeButton.addEventListener("click", updateRange);
-// updateRangeButton.addEventListener("click", updateRanges);
+submitButton.addEventListener("click", submitNamesGuesses);
+// resetButton.addEventListener("click", resetGame);
+clearButton.addEventListener("click", clearGame);
 
 // Generate random number
 function createRandomNumber() {
@@ -38,19 +41,18 @@ function createRandomNumber() {
 
 function updateRange() {
   minValue = parseInt(minRangeInput.value);
-  x = parseInt(maxRangeInput.value);
-  console.log(parseInt(minRangeInput.value));
+  maxValue = parseInt(maxRangeInput.value);
+  minRangeDisplay.innerText = minValue;
+  maxRangeDisplay.innerText = maxValue;
+  console.log(minValue);
+  console.log(maxValue);
 };
 
 //Get names/guesses, then display names/guesses
 function submitNamesGuesses(){
   checkGuesses();
-  var nameOne = challengerOneNameInput.value;
-  var guessOne = challengerOneGuessInput.value;
-  var nameTwo = challengerTwoNameInput.value;
-  var guessTwo = challengerTwoGuessInput.value;
-  NameDisplayOne.innerText = nameOne;
-  NameDisplayTwo.innerText = nameTwo;
+  nameDisplayOne.innerText = challengerOneNameInput.value;
+  nameDisplayTwo.innerText = challengerTwoNameInput.value;
   var guessOneDisplay = challengerOneGuessInput.value;
   var guessTwoDisplay = challengerTwoGuessInput.value;
   challengerOneGuessDisplay.innerText = guessOneDisplay;
@@ -90,3 +92,32 @@ function checkGuesses() {
     return;
   };
 };
+
+function addCard() {
+  resultsCard.innerHTML += 
+      `<div class="card">
+        <div class="card-challengers-container">
+          <h4>${challengerOneNameInput.value}</h4>
+          <div class="card-challengers-vs">VS</div>
+          <h4>${challengerTwoNameInput.value}</h4>
+        </div>
+        <div class="winner-container">
+          <h2>Challenger 2 Name</h2>
+          <p>WINNER</p>
+        </div>
+        <div class="extensions">
+          <p class="extensions-text">47 GUESSES</p>
+          <p class="extensions-text">1.35 MINUTES</p>
+          <span class="close-btn">&times;</span>
+        </div>
+      </div>  
+    </div>`
+};
+
+function clearGame() {
+  challengerTwoNameInput.value = "";
+  challengerOneNameInput.value = "";
+  challengerOneGuessInput.value = "";
+  challengerTwoGuessInput.value = "";
+};
+

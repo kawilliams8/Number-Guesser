@@ -93,8 +93,8 @@
         </div>
       </div>
 		</section>
-		<section class="playing_section">
-			<h4 class="playing-section-heading">The Current Range is 1 to 100</h4>
+		<section class="playing-section">
+			<h4 class="playing-section-heading">The Current Range is <span class="low-range-display">1</span> to <span class="high-range-display">100</span></h4>
 			<h4>Challenger 1</h4>
       <div class="playing-section-part">
         <div class="playing-section-part-1">
@@ -110,11 +110,11 @@
       <div class="playing-section-part">
         <div class="playing-section-part-1">
     			<label for="">Name</label>
-    			<input type="text">
+    			<input class="name-input-two" type="text">
         </div>
         <div class="playing-section-part-2">
     			<label for="">Guess</label>
-    			<input type="text">
+    			<input class="guess-input-two" type="text">
         </div>
       </div>
         <div class="playing-section-part-buttons">
@@ -127,16 +127,16 @@
 			<h3 class="latest-score-section-heading">Latest Score</h3>
         <div class="latest-score-section-parts-container">
         <div class="latest-score-section-parts">
-    			<h4>Challenger 1 Name</h4>
+    			<h4 class="challenger-one-name-display">Challenger 1 Name</h4>
     			<p>current guess</p>
-    			<p class="guess-output guess-output-one">00</p>
-    			<p class="gues-note-one">that's too high</p>
+    			<p class="guess-output guess-output-one">—</p>
+    			<p class="gues-note-one">—</p>
         </div>
         <div class="latest-score-section-parts">
-    			<h4>Challenger 2 Name</h4>
+    			<h4 class="challenger-two-name">Challenger 2 Name</h4>
     			<p>current guess</p>
-    			<p class="guess-output guess-output-two">99</p>
-    			<p class="gues-note-two">that's too high</p>
+    			<p class="guess-output guess-output-two">—</p>
+    			<p class="gues-note-two">—</p>
         </div>
         </div>
         <div class="bottom-line"></div>
@@ -144,7 +144,7 @@
 	</section >
 	<section class="part-two">
 		<div class="card-hub">
-      <div class="card">
+      <!-- <div class="card">
         <div class="card-challengers-container">
           <h4>Challenger 1 Name</h4>
           <div class="card-challengers-vs">VS</div>
@@ -160,7 +160,7 @@
           <span class="close-btn">&times;</span>
         </div>
       </div>  
-    </div>
+    </div> -->
 	</section>
 </main>
 <script type="text/javascript" src="main.js"></script>

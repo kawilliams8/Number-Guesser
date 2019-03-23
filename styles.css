@@ -115,7 +115,7 @@ label {
 
 /* the gaming section starts here */
 
-.playing_section {
+.playing-section {
 
   border: 1px solid #D0D2D3;
   height: 550px;
@@ -163,11 +163,12 @@ label {
 }
 
 .bottom-line {
-  background-color: red;
-  width: 85%;
+  background-color: rgba(0,0,0,0.2);
+  width: 88%;
   height: 2px;
   margin-bottom: 10px;
   position: absolute;
+  top: 49%;
 }
 
 .guess-output {
@@ -375,7 +376,7 @@ header {
      width: 30%;
   }
 
-  .playing_section {
+  .playing-section {
     height: 330px;
   }
 
@@ -412,6 +413,15 @@ header {
     justify-content: center;
     width: 45%;
   }
+
+  .bottom-line {
+  background-color: rgba(0,0,0,0.2);
+  width: 2px;
+  height: 75%;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 30px;
+}
 
 
 }
