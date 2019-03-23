@@ -119,9 +119,9 @@ function addCard() {
   resultsCard.innerHTML += 
       `<div class="card">
         <div class="card-challengers-container">
-          <h4>${challengerOneNameInput.value}</h4>
+          <h4>${challengerOneNameInput.value.toUpperCase()}</h4>
           <div class="card-challengers-vs">VS</div>
-          <h4>${challengerTwoNameInput.value}</h4>
+          <h4>${challengerTwoNameInput.value.toUpperCase()}</h4>
         </div>
         <div class="winner-container">
           <h2>${winner}</h2>
@@ -141,5 +141,11 @@ function clearGame() {
   challengerOneNameInput.value = "";
   challengerOneGuessInput.value = "";
   challengerTwoGuessInput.value = "";
+  nameDisplayOne.innerText = "Challenger 1 Name";
+  nameDisplayTwo.innerText = "Challenger 2 Name";
+  challengerOneGuessDisplay.innerText = "—";
+  challengerTwoGuessDisplay.innerText = "—";
+  challengerOneGuessComparison.innerText = "—";
+  challengerTwoGuessComparison.innerText = "—";
 };
 
