@@ -22,9 +22,11 @@ var challengerOneGuessComparison = document.querySelector(".gues-note-one");
 var challengerTwoGuessComparison = document.querySelector(".gues-note-two");
 var resultsCard = document.querySelector(".card-hub");
 
+
 //Event listeners
 updateRangeButton.addEventListener("click", updateRange);
 submitButton.addEventListener("click", submitNamesGuesses);
+window.addEventListener('load', createRandomNumber);
 // resetButton.addEventListener("click", resetGame);
 clearButton.addEventListener("click", clearGame);
 
@@ -114,7 +116,6 @@ function clearGame() {
   challengerTwoNameInput.value = "";
   challengerOneNameInput.value = "";
   challengerOneGuessInput.value = "";
-  challengerTwoGuessInput.value = "";
+  challengerTwoGuessInput.value = "";s
 };
 
-window.onload = createRandomNumber();
