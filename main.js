@@ -18,6 +18,7 @@ var challengerTwoGuessDisplay = document.querySelector(".guess-output-two");
 var randomNumber;
 var minValue = 1;
 var maxValue = 5;
+var winner = 'ONE!';
 var challengerOneGuessComparison = document.querySelector(".gues-note-one");
 var challengerTwoGuessComparison = document.querySelector(".gues-note-two");
 var resultsCard = document.querySelector(".card-hub");
@@ -63,9 +64,11 @@ function checkGuesses() {
       challengerTwoGuessComparison.innerText = "It's a tie!";
   } else if (challengerOneGuessInput.value == randomNumber) {
       challengerOneGuessComparison.innerText = "Boom!";
+      winnerOne()
       addCard()
   } else if (challengerTwoGuessInput.value == randomNumber) {
       challengerTwoGuessComparison.innerText = "Boom!";
+      winnerTwo()
       addCard()
   } else if (challengerOneGuessInput.value > randomNumber && 
       challengerTwoGuessInput.value > randomNumber) {
@@ -85,10 +88,16 @@ function checkGuesses() {
       challengerTwoGuessComparison.innerText = "that's too high";
   } else if (challengerTwoGuessInput.value > randomNumber) {
       challengerTwoGuessComparison.innerText = "that's too high";
-  } else {
-    return;
   };
 };
+
+function winnerOne() {
+  winner = challengerOneNameInput.value;
+}
+
+function winnerTwo() {
+  winner = challengerTwoNameInput.value;
+}
 
 function addCard() {
   resultsCard.innerHTML += 
@@ -99,7 +108,7 @@ function addCard() {
           <h4>${challengerTwoNameInput.value}</h4>
         </div>
         <div class="winner-container">
-          <h2>Challenger 2 Name</h2>
+          <h2>${winner}</h2>
           <p>WINNER</p>
         </div>
         <div class="extensions">
