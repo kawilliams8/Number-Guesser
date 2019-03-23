@@ -115,6 +115,6 @@ function clearGame() {
   challengerTwoNameInput.value = "";
   challengerOneNameInput.value = "";
   challengerOneGuessInput.value = "";
-  challengerTwoGuessInput.value = "";s
+  challengerTwoGuessInput.value = "";
 };
 
