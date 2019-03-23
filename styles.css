@@ -2,7 +2,6 @@
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
-  border: 0px solid red;
 }
 
 body {
@@ -211,6 +210,11 @@ label {
   height: 93px;
   padding-top: 15px;
   margin-top: 10px;
+}
+
+.winner-container p {
+  font-size: 1.5em;
+  margin-top: -6px;
 }
 
 .extensions {
