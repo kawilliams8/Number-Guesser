@@ -125,6 +125,7 @@ function winnerTwo() {
 }
 
 function addCard() {
+  var closeBtn = document.getElementsByClassName('close-btn');
   resultsCard.innerHTML += 
       `<div class="card">
         <div class="card-challengers-container">
@@ -143,6 +144,14 @@ function addCard() {
         </div>
       </div>  
     </div>`
+
+    for (var i = 0; i < closeBtn.length; i++) {
+      closeBtn[i].addEventListener('click', function() {
+        var x = this.parentElement.parentElement;
+        x.style.display = 'none';
+      })
+    }
+
 };
 
 function clearGame() {
