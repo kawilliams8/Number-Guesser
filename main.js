@@ -36,14 +36,15 @@ function createRandomNumber() {
 function updateRange() {
   minValue = parseInt(minRangeInput.value);
   maxValue = parseInt(maxRangeInput.value);
-
-  
+  minRangeDisplay.innerText = minValue;
+  maxRangeDisplay.innerText = maxValue;
 };
 
 //Get names/guesses, then display names/guesses
 function submitNamesGuesses(){
   checkGuesses();
   var nameOne = challengerOneNameInput.value;
+  console.log(challengerOneNameInput.value);
   var guessOne = challengerOneGuessInput.value;
   var nameTwo = challengerTwoNameInput.value;
   var guessTwo = challengerTwoGuessInput.value;
