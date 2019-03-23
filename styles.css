@@ -115,7 +115,7 @@ label {
 
 /* the gaming section starts here */
 
-.playing_section {
+.playing-section {
 
   border: 1px solid #D0D2D3;
   height: 550px;
@@ -376,7 +376,7 @@ header {
      width: 30%;
   }
 
-  .playing_section {
+  .playing-section {
     height: 330px;
   }
 

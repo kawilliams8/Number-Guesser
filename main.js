@@ -15,16 +15,18 @@ var resetButton = document.querySelector(".submit-reset-btn");
 var clearButton = document.querySelector(".submit-clear-btn");
 var challengerOneGuessDisplay = document.querySelector(".guess-output-one");
 var challengerTwoGuessDisplay = document.querySelector(".guess-output-two");
-var randomNumber;
+var randomNumber = 5;
 var minValue = 1;
 var maxValue = 100;
 var challengerOneGuessComparison = document.querySelector(".gues-note-one");
 var challengerTwoGuessComparison = document.querySelector(".gues-note-two");
-var resultsCard = document.querySelector(".card");
+var resultsCard = document.querySelector(".card-hub");
+
 //Event listeners
-submitButton.addEventListener("click", submitNamesGuesses);
 updateRangeButton.addEventListener("click", updateRange);
-// updateRangeButton.addEventListener("click", updateRanges);
+submitButton.addEventListener("click", submitNamesGuesses);
+// resetButton.addEventListener("click", resetGame);
+clearButton.addEventListener("click", clearGame);
 
 // Generate random number
 function createRandomNumber() {
@@ -86,11 +88,29 @@ function checkGuesses() {
 };
 
 function addCard() {
-  resultsCard.innerHTML += `
-      <div style="height:150px;width:400px;border:2px solid grey;">
-        <h3>This is the H3</h3>
-        <p>Paragraph</p>
-      </div>`;
+  resultsCard.innerHTML += 
+      `<div class="card">
+        <div class="card-challengers-container">
+          <h4>${challengerOneNameInput.value}</h4>
+          <div class="card-challengers-vs">VS</div>
+          <h4>${challengerTwoNameInput.value}</h4>
+        </div>
+        <div class="winner-container">
+          <h2>Challenger 2 Name</h2>
+          <p>WINNER</p>
+        </div>
+        <div class="extensions">
+          <p class="extensions-text">47 GUESSES</p>
+          <p class="extensions-text">1.35 MINUTES</p>
+          <span class="close-btn">&times;</span>
+        </div>
+      </div>  
+    </div>`
+};
+
+function clearGame() {
+  document.getElementById("form-reset").reset;
+  //Added new class to section surrounding form. Method might require form elements.
 };
 
 // window.onload = createRandomNumber();
