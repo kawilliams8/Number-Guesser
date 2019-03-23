@@ -15,9 +15,9 @@ var resetButton = document.querySelector(".submit-reset-btn");
 var clearButton = document.querySelector(".submit-clear-btn");
 var challengerOneGuessDisplay = document.querySelector(".guess-output-one");
 var challengerTwoGuessDisplay = document.querySelector(".guess-output-two");
-var randomNumber = 5;
+var randomNumber;
 var minValue = 1;
-var maxValue = 100;
+var maxValue = 5;
 var challengerOneGuessComparison = document.querySelector(".gues-note-one");
 var challengerTwoGuessComparison = document.querySelector(".gues-note-two");
 var resultsCard = document.querySelector(".card-hub");
@@ -40,6 +40,8 @@ function updateRange() {
   maxValue = parseInt(maxRangeInput.value);
   minRangeDisplay.innerText = minValue;
   maxRangeDisplay.innerText = maxValue;
+  console.log(minValue);
+  console.log(maxValue);
 };
 
 //Get names/guesses, then display names/guesses
@@ -109,8 +111,10 @@ function addCard() {
 };
 
 function clearGame() {
-  document.getElementById("form-reset").reset;
-  //Added new class to section surrounding form. Method might require form elements.
+  challengerTwoNameInput.value = "";
+  challengerOneNameInput.value = "";
+  challengerOneGuessInput.value = "";
+  challengerTwoGuessInput.value = "";
 };
 
-// window.onload = createRandomNumber();
+window.onload = createRandomNumber();
