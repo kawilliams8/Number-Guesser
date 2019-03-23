@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Number Guesser</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="styles.css" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
+<title>Number Guesser</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
 </head>
 <body>
   <header>
@@ -63,5 +63,106 @@
     </section>
   </main>
   <script type="text/javascript" src="main.js"></script>
+=======
+<header>
+	<section>
+		<section class="heading-section">
+			<h1 class="first-heading">NUMBER<span class="first-heading-two">GUESSER</span></h1>
+		</section>
+		<section class="heading-section">
+			<div class="header-line"></div>
+			<h3 class="second-heading">ULTIMATE CHALLENGER EDITION</h3>
+		</section>
+	</section>
+</header>
+<main>
+	<section class="part-one">
+		<section class="set-range-section">
+        <h4>Set Range</h4>
+        <div class="set-range-section-body">
+        <div class="set-range-section-part-one">
+    			<label for="" >Min Range</label>
+    			<input type="text" class="min-range-input">
+        </div>
+        <div class="set-range-section-part-two">
+  			  <label for="" type="text">Max Range</label>
+    			<input type="text" class="max-range-input">
+        </div>
+        <div class="set-range-section-part-three">
+    			<button class="btn update-btn">UPDATE</button>
+        </div>
+      </div>
+		</section>
+		<section class="playing_section">
+			<h4 class="playing-section-heading">The Current Range is 1 to 100</h4>
+			<h4>Challenger 1</h4>
+      <div class="playing-section-part">
+        <div class="playing-section-part-1">
+    			<label for="">Name</label>
+    			<input class="name-input-one" type="text">
+        </div>
+        <div class="playing-section-part-2">
+    			<label for="">Guess</label>
+    			<input class="guess-input-one" type="text">
+        </div>
+      </div>
+			<h4>Challenger 2</h4>
+      <div class="playing-section-part">
+        <div class="playing-section-part-1">
+    			<label for="">Name</label>
+    			<input type="text">
+        </div>
+        <div class="playing-section-part-2">
+    			<label for="">Guess</label>
+    			<input type="text">
+        </div>
+      </div>
+        <div class="playing-section-part-buttons">
+    			<button class="btn game-btn submit-guess-btn">SUBMIT GUESS</button>
+    			<button class="btn game-btn submit-reset-btn">RESET GAME</button>
+    			<button class="btn game-btn submit-clear-btn">CLEAR GAME</button>
+        </div>
+		</section>
+		<section class="latest-score-section">
+			<h3 class="latest-score-section-heading">Latest Score</h3>
+        <div class="latest-score-section-parts-container">
+        <div class="latest-score-section-parts">
+    			<h4>Challenger 1 Name</h4>
+    			<p>current guess</p>
+    			<p class="guess-output guess-output-one">00</p>
+    			<p class="gues-note-one">that's too high</p>
+        </div>
+        <div class="latest-score-section-parts">
+    			<h4>Challenger 2 Name</h4>
+    			<p>current guess</p>
+    			<p class="guess-output guess-output-two">99</p>
+    			<p class="gues-note-two">that's too high</p>
+        </div>
+        </div>
+        <div class="bottom-line"></div>
+		</section>
+	</section >
+	<section class="part-two">
+		<div class="card-hub">
+      <div class="card">
+        <div class="card-challengers-container">
+          <h4>Challenger 1 Name</h4>
+          <div class="card-challengers-vs">VS</div>
+          <h4>Challenger 2 Name</h4>
+        </div>
+        <div class="winner-container">
+          <h2>Challenger 2 Name</h2>
+          <p>WINNER</p>
+        </div>
+        <div class="extensions">
+          <p class="extensions-text">47 GUESSES</p>
+          <p class="extensions-text">1.35 MINUTES</p>
+          <span class="close-btn">&times;</span>
+        </div>
+      </div>  
+    </div>
+	</section>
+</main>
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>

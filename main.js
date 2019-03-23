@@ -1,8 +1,6 @@
 //Global variables
-var minRangeInput = document.getElementById("min-range-input");
-var maxRangeInput = document.getElementById("max-range-input");
-var minRangeParsed = parseInt(minRangeInput);
-var maxRangeParsed = parseInt(maxRangeInput);
+var minRangeInput = document.querySelector(".min-range-input");
+var maxRangeInput = document.querySelector(".max-range-input");
 var minRangeDisplay = document.getElementById("low-range-display")
 var maxRangeDisplay = document.getElementById("high-range-display")
 var updateRangeButton = document.getElementById("update-range-button");
@@ -17,33 +15,32 @@ var resetButton = document.getElementById("reset-button");
 var clearButton = document.getElementById("clear-button");
 var challengerOneGuessDisplay = document.getElementById("challenger-one-current-guess");
 var challengerTwoGuessDisplay = document.getElementById("challenger-two-current-guess");
-var randomNumber = Math.floor(Math.random() * 100) + 1;
+//Event listeners
+
+
+var randomNumber;
+var minValue = 1;
+var maxValue = 100;
 var challengerOneGuessComparison = document.getElementById("comparison-result-1");
 var challengerTwoGuessComparison = document.getElementById("comparison-result-2");
+var resultsCard = document.querySelector(".results-card");
 //Event listeners
 submitButton.addEventListener("click", submitNamesGuesses);
+updateRangeButton.addEventListener("click", updateRange);
 // updateRangeButton.addEventListener("click", updateRanges);
-console.log(randomNumber);
 
-//Generate random number
-// function createRandomNumber(num) {
-// 	var random = Math.floor(Math.random() * 100) + 1;
-// 	console.log("local random " + random);
-//   num = random;
-//   }
-//   console.log("global random" + RandomNumber);
+// Generate random number
+function createRandomNumber() {
+	var random = Math.floor((Math.random() * ((maxValue - minValue) + 1)) + minValue);
+  randomNumber = random;
+  console.log(randomNumber);
+  }
 
-//Get and display user's game ranges, create the secret number
-// function updateRanges(minRangeParsed, maxRangeParsed) {
-//   var minRange = minRangeParsed.innerText;
-//   console.log(minRange);
-//   var maxRange.innerText = maxRangeParsed.innerText;
-//   var random = Math.floor((Math.random() * (100)) + 1);
-//   console.log(random);
-//   minRangeDisplay.value = minRange;
-//   maxRangeDisplay.value = maxRange;
-// }
-
+function updateRange() {
+  minValue = parseInt(minRangeInput.value);
+  x = parseInt(maxRangeInput.value);
+  console.log(parseInt(minRangeInput.value));
+};
 
 //Get names/guesses, then display names/guesses
 function submitNamesGuesses(){
@@ -65,10 +62,12 @@ function checkGuesses() {
       challengerTwoGuessInput.value == randomNumber) {
       challengerOneGuessComparison.innerText = "It's a tie!";
       challengerTwoGuessComparison.innerText = "It's a tie!";
-  } else if(challengerOneGuessInput.value == randomNumber) {
+  } else if (challengerOneGuessInput.value == randomNumber) {
       challengerOneGuessComparison.innerText = "Boom!";
+      addCard()
   } else if (challengerTwoGuessInput.value == randomNumber) {
       challengerTwoGuessComparison.innerText = "Boom!";
+      addCard()
   } else if (challengerOneGuessInput.value > randomNumber && 
       challengerTwoGuessInput.value > randomNumber) {
       challengerOneGuessComparison.innerText = "that's too high";
@@ -89,8 +88,5 @@ function checkGuesses() {
       challengerTwoGuessComparison.innerText = "that's too high";
   } else {
     return;
-    console.log("no else ifs match");
   };
 };
-
-// window.onload = createRandomNumber();
