@@ -15,12 +15,16 @@ var resetButton = document.querySelector(".submit-reset-btn");
 var clearButton = document.querySelector(".submit-clear-btn");
 var challengerOneGuessDisplay = document.querySelector(".guess-output-one");
 var challengerTwoGuessDisplay = document.querySelector(".guess-output-two");
+var myCard = document.getElementsByClassName('card');
+var removeAllCardsBtn = document.querySelector('.remove-all-btn');
+var partTwo = document.querySelector('.part-two');
 var randomNumber;
 var minValue = 1;
 var maxValue = 100;
 var winner;
 var numberOfGuesses = 1;
 var guessValue = 'GUESS';
+var numberOfCards = 0;
 var challengerOneGuessComparison = document.querySelector(".gues-note-one");
 var challengerTwoGuessComparison = document.querySelector(".gues-note-two");
 var resultsCard = document.querySelector(".card-hub");
@@ -41,7 +45,6 @@ function createRandomNumber() {
   var maxFixed = (max - min) + 1;
   randomNumber = Math.floor(Math.random() * maxFixed) + minFixed;
  console.log('RN: ' + randomNumber)
-
   }
 
 
@@ -74,13 +77,13 @@ createRandomNumber()
 //Get names/guesses, then display names/guesses
 function submitNamesGuesses(){
   checkGuesses();
+  showRemoveAllCardsBtn();
   nameDisplayOne.innerText = challengerOneNameInput.value;
   nameDisplayTwo.innerText = challengerTwoNameInput.value;
   var guessOneDisplay = challengerOneGuessInput.value;
   var guessTwoDisplay = challengerTwoGuessInput.value;
   challengerOneGuessDisplay.innerText = guessOneDisplay;
   challengerTwoGuessDisplay.innerText = guessTwoDisplay;
-  
 }
 
 function checkGuesses() {
@@ -95,12 +98,14 @@ function checkGuesses() {
       addCard()
       createRandomNumber()
       resetCountGuesses()
+      incrementCard()
   } else if (challengerTwoGuessInput.value == randomNumber) {
       challengerTwoGuessComparison.innerText = "Boom!";
       winnerTwo()
       addCard()
       createRandomNumber()
       resetCountGuesses()
+      incrementCard()
   } else if (challengerOneGuessInput.value > randomNumber && 
       challengerTwoGuessInput.value > randomNumber) {
       challengerOneGuessComparison.innerText = "that's too high";
@@ -137,6 +142,7 @@ function winnerTwo() {
 
 function addCard() {
   var closeBtn = document.getElementsByClassName('close-btn');
+  
   resultsCard.innerHTML += 
       `<div class="card">
         <div class="card-challengers-container">
@@ -153,17 +159,52 @@ function addCard() {
           <p class="extensions-text">1.35 MINUTES</p>
           <span class="close-btn">&times;</span>
         </div>
-      </div>  
     </div>`
 
-    for (var i = 0; i < closeBtn.length; i++) {
+    for(var i = 0; i < closeBtn.length; i++) {
       closeBtn[i].addEventListener('click', function() {
         var x = this.parentElement.parentElement;
         x.style.display = 'none';
+        numberOfCards -= 1;
+        showRemoveAllCardsBtn()
       })
     }
-
 };
+
+
+
+removeAllCardsBtn.addEventListener('click', function() {
+    for(var i = 0; i < myCard.length; i++) {
+    myCard[i].style.display = 'none';
+  };
+  numberOfCards = 0;
+  showRemoveAllCardsBtn()
+});
+
+
+function incrementCard() {
+  numberOfCards += 1;
+  console.log(numberOfCards)
+};
+
+function showRemoveAllCardsBtn() {
+  if (numberOfCards > 1) {
+    removeAllCardsBtn.style.display = 'block';
+    removeAllCardsBtn.style.opacity = '0';
+  } else {
+    removeAllCardsBtn.style.display = 'none';
+  } 
+}
+
+partTwo.addEventListener('mouseover', function() {
+  removeAllCardsBtn.style.opacity = '1';
+})
+
+partTwo.addEventListener('mouseout', function() {
+  removeAllCardsBtn.style.opacity = '0';
+})
+
+
 
 function clearGame() {
   challengerTwoNameInput.value = "";
@@ -194,4 +235,6 @@ function resetCountGuesses() {
   numberOfGuesses = 1;
   guessValue = 'GUESS';
 }
+
+
 
