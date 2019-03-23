@@ -32,7 +32,7 @@ clearButton.addEventListener("click", clearGame);
 
 // Generate random number
 function createRandomNumber() {
-  
+
   var min = parseInt(minValue);
   var max = parseInt(maxValue);
   var minFixed = min;
@@ -89,10 +89,12 @@ function checkGuesses() {
       challengerOneGuessComparison.innerText = "Boom!";
       winnerOne()
       addCard()
+      createRandomNumber()
   } else if (challengerTwoGuessInput.value == randomNumber) {
       challengerTwoGuessComparison.innerText = "Boom!";
       winnerTwo()
       addCard()
+      createRandomNumber()
   } else if (challengerOneGuessInput.value > randomNumber && 
       challengerTwoGuessInput.value > randomNumber) {
       challengerOneGuessComparison.innerText = "that's too high";
