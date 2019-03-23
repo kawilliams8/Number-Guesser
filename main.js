@@ -15,17 +15,12 @@ var resetButton = document.querySelector(".submit-reset-btn");
 var clearButton = document.querySelector(".submit-clear-btn");
 var challengerOneGuessDisplay = document.querySelector(".guess-output-one");
 var challengerTwoGuessDisplay = document.querySelector(".guess-output-two");
-
-//Event listeners
-
-
 var randomNumber;
 var minValue = 1;
 var maxValue = 5;
 var challengerOneGuessComparison = document.querySelector(".gues-note-one");
 var challengerTwoGuessComparison = document.querySelector(".gues-note-two");
 var resultsCard = document.querySelector(".card-hub");
-
 
 //Event listeners
 updateRangeButton.addEventListener("click", updateRange);
