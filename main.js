@@ -1,6 +1,6 @@
 //Global variables
-var minRangeInput = document.querySelector("#min-range-input");
-var maxRangeInput = document.getElementById("max-range-input");
+var minRangeInput = document.querySelector(".min-range-input");
+var maxRangeInput = document.querySelector(".max-range-input");
 var minRangeDisplay = document.getElementById("low-range-display")
 var maxRangeDisplay = document.getElementById("high-range-display")
 var updateRangeButton = document.getElementById("update-range-button");
@@ -15,6 +15,9 @@ var resetButton = document.getElementById("reset-button");
 var clearButton = document.getElementById("clear-button");
 var challengerOneGuessDisplay = document.getElementById("challenger-one-current-guess");
 var challengerTwoGuessDisplay = document.getElementById("challenger-two-current-guess");
+//Event listeners
+
+
 var randomNumber;
 var minValue = 1;
 var maxValue = 100;
@@ -87,13 +90,3 @@ function checkGuesses() {
     return;
   };
 };
-
-function addCard() {
-  resultsCard.innerHTML += `
-      <div style="height:150px;width:400px;border:2px solid grey;">
-        <h3>This is the H3</h3>
-        <p>Paragraph</p>
-      </div>`;
-};
-
-// window.onload = createRandomNumber();
