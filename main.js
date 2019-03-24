@@ -32,10 +32,17 @@ clearButton.addEventListener("click", clearGame);
 
 // Generate random number
 function createRandomNumber() {
+  
+  var min = parseInt(minValue);
+  var max = parseInt(maxValue);
+  var minFixed = min;
+  var maxFixed = (max - min) + 1;
+  randomNumber = Math.floor(Math.random() * maxFixed) + minFixed;
+ console.log('RN: ' + randomNumber)
 
-	var randomNumber = Math.floor((Math.random() * ((maxValue - minValue) + 1)) + minValue);
-  console.log(randomNumber);
   }
+
+
 function updateRange() {
 
   if (minRangeInput.value != "" && maxRangeInput.value != "") {
