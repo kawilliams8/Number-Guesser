@@ -100,6 +100,7 @@ function checkGuesses() {
       challengerOneGuessComparison.innerText = "Boom!";
       winnerOne()
       addCard()
+      timerEnded()
       createRandomNumber()
       resetCountGuesses()
       incrementCard()
@@ -107,6 +108,7 @@ function checkGuesses() {
       challengerTwoGuessComparison.innerText = "Boom!";
       winnerTwo()
       addCard()
+      timerEnded()
       createRandomNumber()
       resetCountGuesses()
       incrementCard()
@@ -195,6 +197,25 @@ function addCard() {
     startTime = currentTime;
   }
 }
+
+function timerEnded() {
+  var date = new Date();
+  var currentTime = date.getTime();
+  endTime = currentTime;
+  var milliSeconds = endTime - startTime;
+  var fixedMilliSeconds;
+  
+  if (isNaN(milliSeconds) === true) {
+    fixedMilliSeconds = 0;
+  } else {
+    fixedMilliSeconds = milliSeconds;
+  }
+  
+  var minutes = Math.floor(fixedMilliSeconds / 60000);
+  var seconds = ((fixedMilliSeconds % 60000) / 1000).toFixed(0);
+  timeDiff = minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+ }
+
 
 removeAllCardsBtn.addEventListener('click', function() {
     for(var i = 0; i < myCard.length; i++) {
