@@ -201,6 +201,8 @@ label {
   align-items: center;
   display: ;
   color: gray;
+  transform: translatex(-150%);
+  transition: 0.3s;
 }
 
 .winner-container {
@@ -238,6 +240,9 @@ label {
   cursor: pointer;
 }
 
+.close-btn:hover {
+  background-color: rgb(255,0,0);
+}
 .extensions-text {
   font-size: 14px;
 }
@@ -416,6 +421,8 @@ header {
   .card {
     height: 165px;
     width: 88%;
+    transition: 0.3s;
+    transform: translatex(-150%);
   }
 
   .card-challengers-container {
