@@ -25,6 +25,9 @@ var winner;
 var numberOfGuesses = 1;
 var guessValue = 'GUESS';
 var numberOfCards = 0;
+var startTime;
+var endTime;
+var timeDiff;
 var challengerOneGuessComparison = document.querySelector(".gues-note-one");
 var challengerTwoGuessComparison = document.querySelector(".gues-note-two");
 var resultsCard = document.querySelector(".card-hub");
@@ -32,6 +35,7 @@ var resultsCard = document.querySelector(".card-hub");
 //Event listeners
 updateRangeButton.addEventListener("click", updateRange);
 submitButton.addEventListener("click", submitNamesGuesses);
+submitButton.addEventListener("click", timerStarted;
 window.addEventListener("load", createRandomNumber);
 // resetButton.addEventListener("click", resetGame);
 clearButton.addEventListener("click", clearGame);
@@ -181,6 +185,16 @@ function addCard() {
       myCard[i].style.transform = 'translateX(0px)';
     }
   }
+
+  // timer function //////////////////////
+
+  function timerStarted() {
+  if(numberOfGuesses === 2) {
+    var date = new Date();
+    var currentTime = date.getTime();
+    startTime = currentTime;
+  }
+}
 
 removeAllCardsBtn.addEventListener('click', function() {
     for(var i = 0; i < myCard.length; i++) {
