@@ -132,6 +132,7 @@ function checkGuesses() {
   };
 };
 
+//result card with winner, game stats
 function winnerOne() {
   winner = challengerOneNameInput.value;
 }
