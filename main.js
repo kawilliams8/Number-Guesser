@@ -19,6 +19,8 @@ var randomNumber;
 var minValue = 1;
 var maxValue = 100;
 var winner;
+var numberOfGuesses = 1;
+var guessValue = 'GUESS';
 var challengerOneGuessComparison = document.querySelector(".gues-note-one");
 var challengerTwoGuessComparison = document.querySelector(".gues-note-two");
 var resultsCard = document.querySelector(".card-hub");
@@ -78,6 +80,7 @@ function submitNamesGuesses(){
   var guessTwoDisplay = challengerTwoGuessInput.value;
   challengerOneGuessDisplay.innerText = guessOneDisplay;
   challengerTwoGuessDisplay.innerText = guessTwoDisplay;
+  
 }
 
 function checkGuesses() {
@@ -85,34 +88,42 @@ function checkGuesses() {
       challengerTwoGuessInput.value == randomNumber) {
       challengerOneGuessComparison.innerText = "It's a tie!";
       challengerTwoGuessComparison.innerText = "It's a tie!";
+      countGuesses()
   } else if (challengerOneGuessInput.value == randomNumber) {
       challengerOneGuessComparison.innerText = "Boom!";
       winnerOne()
       addCard()
       createRandomNumber()
+      resetCountGuesses()
   } else if (challengerTwoGuessInput.value == randomNumber) {
       challengerTwoGuessComparison.innerText = "Boom!";
       winnerTwo()
       addCard()
       createRandomNumber()
+      resetCountGuesses()
   } else if (challengerOneGuessInput.value > randomNumber && 
       challengerTwoGuessInput.value > randomNumber) {
       challengerOneGuessComparison.innerText = "that's too high";
       challengerTwoGuessComparison.innerText = "that's too high";
+      countGuesses()
   } else if (challengerOneGuessInput.value > randomNumber && 
       challengerTwoGuessInput.value < randomNumber) {
       challengerOneGuessComparison.innerText = "that's too high";
       challengerTwoGuessComparison.innerText = "that's too low";
+      countGuesses()
   } else if (challengerOneGuessInput.value < randomNumber && 
       challengerTwoGuessInput.value < randomNumber) {
       challengerOneGuessComparison.innerText = "that's too low";
       challengerTwoGuessComparison.innerText = "that's too low";
+      countGuesses()
   } else if (challengerOneGuessInput.value < randomNumber && 
       challengerTwoGuessInput.value > randomNumber) {
       challengerOneGuessComparison.innerText = "that's too low";
       challengerTwoGuessComparison.innerText = "that's too high";
+      countGuesses()
   } else if (challengerTwoGuessInput.value > randomNumber) {
       challengerTwoGuessComparison.innerText = "that's too high";
+      countGuesses()
   };
 };
 
@@ -138,7 +149,7 @@ function addCard() {
           <p>WINNER</p>
         </div>
         <div class="extensions">
-          <p class="extensions-text">47 GUESSES</p>
+          <p class="extensions-text">${numberOfGuesses} ${guessValue}</p>
           <p class="extensions-text">1.35 MINUTES</p>
           <span class="close-btn">&times;</span>
         </div>
@@ -166,4 +177,21 @@ function clearGame() {
   challengerOneGuessComparison.innerText = "—";
   challengerTwoGuessComparison.innerText = "—";
 };
+
+
+function countGuesses() {
+  numberOfGuesses += 1;
+
+  if (numberOfGuesses > 1) {
+    guessValue = 'GUESSES';
+  } else {
+    guessValue = 'GUESS';
+  }
+  console.log(numberOfGuesses);
+}
+
+function resetCountGuesses() {
+  numberOfGuesses = 1;
+  guessValue = 'GUESS';
+}
 
