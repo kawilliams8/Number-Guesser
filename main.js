@@ -32,7 +32,7 @@ clearButton.addEventListener("click", clearGame);
 
 // Generate random number
 function createRandomNumber() {
-  
+
   var min = parseInt(minValue);
   var max = parseInt(maxValue);
   var minFixed = min;
@@ -89,10 +89,12 @@ function checkGuesses() {
       challengerOneGuessComparison.innerText = "Boom!";
       winnerOne()
       addCard()
+      createRandomNumber()
   } else if (challengerTwoGuessInput.value == randomNumber) {
       challengerTwoGuessComparison.innerText = "Boom!";
       winnerTwo()
       addCard()
+      createRandomNumber()
   } else if (challengerOneGuessInput.value > randomNumber && 
       challengerTwoGuessInput.value > randomNumber) {
       challengerOneGuessComparison.innerText = "that's too high";
@@ -123,6 +125,7 @@ function winnerTwo() {
 }
 
 function addCard() {
+  var closeBtn = document.getElementsByClassName('close-btn');
   resultsCard.innerHTML += 
       `<div class="card">
         <div class="card-challengers-container">
@@ -141,6 +144,14 @@ function addCard() {
         </div>
       </div>  
     </div>`
+
+    for (var i = 0; i < closeBtn.length; i++) {
+      closeBtn[i].addEventListener('click', function() {
+        var x = this.parentElement.parentElement;
+        x.style.display = 'none';
+      })
+    }
+
 };
 
 function clearGame() {
