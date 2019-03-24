@@ -162,7 +162,7 @@ function addCard() {
         </div>
         <div class="extensions">
           <p class="extensions-text">${numberOfGuesses} ${guessValue}</p>
-          <p class="extensions-text">1.35 MINUTES</p>
+          <p class="extensions-text">${timeDiff} MINUTES</p>
           <span class="close-btn">&times;</span>
         </div>
     </div>`
