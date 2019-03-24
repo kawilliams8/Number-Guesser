@@ -238,6 +238,9 @@ label {
   cursor: pointer;
 }
 
+.close-btn:hover {
+  background-color: rgb(255,0,0);
+}
 .extensions-text {
   font-size: 14px;
 }
