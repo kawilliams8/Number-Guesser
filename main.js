@@ -35,7 +35,7 @@ var resultsCard = document.querySelector(".card-hub");
 //Event listeners
 updateRangeButton.addEventListener("click", updateRange);
 submitButton.addEventListener("click", submitNamesGuesses);
-submitButton.addEventListener("click", timerStarted;
+submitButton.addEventListener("click", timerStarted);
 window.addEventListener("load", createRandomNumber);
 // resetButton.addEventListener("click", resetGame);
 clearButton.addEventListener("click", clearGame);
@@ -95,33 +95,33 @@ function checkGuesses() {
       challengerTwoGuessInput.value == randomNumber) {
       challengerOneGuessComparison.innerText = "It's a tie!";
       challengerTwoGuessComparison.innerText = "It's a tie!";
-      countGuesses()
+      countGuesses();
   } else if (challengerOneGuessInput.value == randomNumber) {
       challengerOneGuessComparison.innerText = "Boom!";
-      winnerOne()
-      addCard()
-      timerEnded()
-      createRandomNumber()
-      resetCountGuesses()
-      incrementCard()
+      winnerOne();
+      createRandomNumber();
+      incrementCard();
+      timerEnded();
+      addCard();
+      resetCountGuesses();
   } else if (challengerTwoGuessInput.value == randomNumber) {
       challengerTwoGuessComparison.innerText = "Boom!";
-      winnerTwo()
-      addCard()
-      timerEnded()
-      createRandomNumber()
-      resetCountGuesses()
-      incrementCard()
+      winnerTwo();
+      createRandomNumber();
+      incrementCard();
+      timerEnded();
+      addCard();
+      resetCountGuesses();
   } else if (challengerOneGuessInput.value > randomNumber && 
       challengerTwoGuessInput.value > randomNumber) {
       challengerOneGuessComparison.innerText = "that's too high";
       challengerTwoGuessComparison.innerText = "that's too high";
-      countGuesses()
+      countGuesses();
   } else if (challengerOneGuessInput.value > randomNumber && 
       challengerTwoGuessInput.value < randomNumber) {
       challengerOneGuessComparison.innerText = "that's too high";
       challengerTwoGuessComparison.innerText = "that's too low";
-      countGuesses()
+      countGuesses();
   } else if (challengerOneGuessInput.value < randomNumber && 
       challengerTwoGuessInput.value < randomNumber) {
       challengerOneGuessComparison.innerText = "that's too low";
