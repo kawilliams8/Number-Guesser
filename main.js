@@ -162,22 +162,38 @@ function addCard() {
         </div>
     </div>`
 
-    for(var i = 0; i < closeBtn.length; i++) {
+     for(var i = 0; i < closeBtn.length; i++) {
       closeBtn[i].addEventListener('click', function() {
         var x = this.parentElement.parentElement;
-        x.style.display = 'none';
+        x.style.transform = 'translateX(150%)';
         numberOfCards -= 1;
         showRemoveAllCardsBtn()
+        
+        setTimeout(function() {
+          x.style.display = 'none';
+        }, 500);
       })
     }
+    setTimeout(slideCard, 10);
 };
 
-
+ function slideCard() {
+    for (var i = 0; i < myCard.length; i++) {
+      myCard[i].style.transform = 'translateX(0px)';
+    }
+  }
 
 removeAllCardsBtn.addEventListener('click', function() {
     for(var i = 0; i < myCard.length; i++) {
-    myCard[i].style.display = 'none';
+    myCard[i].style.transform = 'translateX(150%)';
   };
+  
+  setTimeout(function() {
+    for(var i = 0; i < myCard.length; i++) {
+    myCard[i].style.display = 'none';
+  }
+  }, 500);
+  
   numberOfCards = 0;
   showRemoveAllCardsBtn()
 });
