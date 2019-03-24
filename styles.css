@@ -201,6 +201,8 @@ label {
   align-items: center;
   display: ;
   color: gray;
+  transform: translatex(-150%);
+  transition: 0.3s;
 }
 
 .winner-container {
@@ -419,6 +421,8 @@ header {
   .card {
     height: 165px;
     width: 88%;
+    transition: 0.3s;
+    transform: translatex(-150%);
   }
 
   .card-challengers-container {
