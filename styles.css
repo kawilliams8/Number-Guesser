@@ -103,6 +103,11 @@ h4 {
   outline: none;
 }
 
+.btn:active {
+  background-color: #6e6e6e;
+  cursor: pointer;
+}
+
 .btn:hover {
   background-color: #dd1972;
   cursor: pointer;
@@ -110,6 +115,20 @@ h4 {
 
 label {
   color: gray;
+}
+
+.error-box {
+  height: 9px;
+  width: 100%;
+  background-color: #e8e8e8;
+  display: inline-flex;
+}
+
+.error-text {
+  font-size: 9px;
+  line-height: 9px;
+  color: #DD1972;
+  font-weight: 700;
 }
 
 /* the gaming section starts here */
@@ -309,9 +328,22 @@ header {
   }
 
   .part-two {
-  overflow: scroll;
-  height: 720px;
+    overflow: scroll;
+    height: 720px;
   }
+
+  .error-box {
+    height: 9px;
+    width: 100%;
+    display: inline-flex;
+}
+
+ .error-text {
+   font-size: 9px;
+   line-height: 9px;
+   color: #DD1972;
+   font-weight: 700;
+}
 
   .set-range-section-part-one,
   .set-range-section-part-two,
