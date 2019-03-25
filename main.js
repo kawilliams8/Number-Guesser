@@ -259,9 +259,11 @@ partTwo.addEventListener('mouseout', function() {
   removeAllCardsBtn.style.opacity = '0';
 })
 
-// function resetGame() {
+function resetGame() {
+  challengerOneGuessInput.value = "";
+  challengerTwoGuessInput.value = "";
   createRandomNumber();
-// }
+}
 
 
 
