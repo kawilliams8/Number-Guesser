@@ -216,7 +216,6 @@ function timerEnded() {
   var seconds = ((timeFixed % 60000) / 1000).toFixed(0);
   timeDiff = minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 
-  console.log( startTime + ' ' + endTime)
  }
 
 
