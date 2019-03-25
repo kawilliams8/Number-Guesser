@@ -262,8 +262,8 @@ partTwo.addEventListener('mouseout', function() {
 
 
 function clearGame() {
-  challengerTwoNameInput.value = "";
   challengerOneNameInput.value = "";
+  challengerTwoNameInput.value = "";
   challengerOneGuessInput.value = "";
   challengerTwoGuessInput.value = "";
   nameDisplayOne.innerText = "Challenger 1 Name";
@@ -272,7 +272,16 @@ function clearGame() {
   challengerTwoGuessDisplay.innerText = "—";
   challengerOneGuessComparison.innerText = "—";
   challengerTwoGuessComparison.innerText = "—";
+  minRangeDisplay.innerText = 1;
+  maxRangeDisplay.innerText = 100;
+  minValue = 1;
+  maxValue = 100;
+  minRangeInput.value = '';
+  maxRangeInput.value = '';
+  numberOfGuesses = 0;
+  createRandomNumber();
 };
+
 
 
 function countGuesses() {
