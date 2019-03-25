@@ -1,8 +1,8 @@
 //Global variables
 var minRangeInput = document.querySelector(".min-range-input");
 var maxRangeInput = document.querySelector(".max-range-input");
-var minRangeDisplay = document.querySelector(".low-range-display"); //added later
-var maxRangeDisplay = document.querySelector(".high-range-display"); //added later
+var minRangeDisplay = document.querySelector(".low-range-display");
+var maxRangeDisplay = document.querySelector(".high-range-display");
 var updateRangeButton = document.querySelector(".update-btn");
 var challengerOneNameInput = document.querySelector(".name-input-one");
 var challengerOneGuessInput = document.querySelector(".guess-input-one");
@@ -22,9 +22,12 @@ var randomNumber;
 var minValue = 1;
 var maxValue = 100;
 var winner;
-var numberOfGuesses = 1;
+var numberOfGuesses = 0;
 var guessValue = 'GUESS';
 var numberOfCards = 0;
+var startTime;
+var endTime;
+var timeDiff;
 var challengerOneGuessComparison = document.querySelector(".gues-note-one");
 var challengerTwoGuessComparison = document.querySelector(".gues-note-two");
 var resultsCard = document.querySelector(".card-hub");
@@ -32,8 +35,9 @@ var resultsCard = document.querySelector(".card-hub");
 //Event listeners
 updateRangeButton.addEventListener("click", updateRange);
 submitButton.addEventListener("click", submitNamesGuesses);
+submitButton.addEventListener("click", timerStarted);
 window.addEventListener("load", createRandomNumber);
-// resetButton.addEventListener("click", resetGame);
+resetButton.addEventListener("click", resetGame);
 clearButton.addEventListener("click", clearGame);
 
 // Generate random number
@@ -91,31 +95,33 @@ function checkGuesses() {
       challengerTwoGuessInput.value == randomNumber) {
       challengerOneGuessComparison.innerText = "It's a tie!";
       challengerTwoGuessComparison.innerText = "It's a tie!";
-      countGuesses()
+      countGuesses();
   } else if (challengerOneGuessInput.value == randomNumber) {
       challengerOneGuessComparison.innerText = "Boom!";
-      winnerOne()
-      addCard()
-      createRandomNumber()
-      resetCountGuesses()
-      incrementCard()
+      winnerOne();
+      createRandomNumber();
+      incrementCard();
+      timerEnded();
+      addCard();
+      resetCountGuesses();
   } else if (challengerTwoGuessInput.value == randomNumber) {
       challengerTwoGuessComparison.innerText = "Boom!";
-      winnerTwo()
-      addCard()
-      createRandomNumber()
-      resetCountGuesses()
-      incrementCard()
+      winnerTwo();
+      createRandomNumber();
+      incrementCard();
+      timerEnded();
+      addCard();
+      resetCountGuesses();
   } else if (challengerOneGuessInput.value > randomNumber && 
       challengerTwoGuessInput.value > randomNumber) {
       challengerOneGuessComparison.innerText = "that's too high";
       challengerTwoGuessComparison.innerText = "that's too high";
-      countGuesses()
+      countGuesses();
   } else if (challengerOneGuessInput.value > randomNumber && 
       challengerTwoGuessInput.value < randomNumber) {
       challengerOneGuessComparison.innerText = "that's too high";
       challengerTwoGuessComparison.innerText = "that's too low";
-      countGuesses()
+      countGuesses();
   } else if (challengerOneGuessInput.value < randomNumber && 
       challengerTwoGuessInput.value < randomNumber) {
       challengerOneGuessComparison.innerText = "that's too low";
@@ -155,8 +161,8 @@ function addCard() {
           <p>WINNER</p>
         </div>
         <div class="extensions">
-          <p class="extensions-text">${numberOfGuesses} ${guessValue}</p>
-          <p class="extensions-text">1.35 MINUTES</p>
+          <p class="extensions-text">${numberOfGuesses + 1} ${guessValue}</p>
+          <p class="extensions-text">${timeDiff} MINUTES</p>
           <span class="close-btn">&times;</span>
         </div>
     </div>`
@@ -182,6 +188,40 @@ function addCard() {
     }
   }
 
+
+  function timerStarted() {
+  if(numberOfGuesses === 1) {
+    var date = new Date();
+    var currentTime = date.getTime();
+    startTime = currentTime;
+  }
+}
+
+function timerEnded() {
+  var date = new Date();
+  var currentTime = date.getTime();
+  endTime = currentTime;
+  var milliSeconds = endTime - startTime;
+  var fixedStartTime;
+
+  if(numberOfGuesses === 0) {
+    fixedStartTime = endTime;
+  } else {
+    fixedStartTime = startTime;
+  }
+
+  var timeFixed = endTime - fixedStartTime;
+
+  var minutes = Math.floor(timeFixed / 60000);
+  var seconds = ((timeFixed % 60000) / 1000).toFixed(0);
+  timeDiff = minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+
+ }
+
+
+
+
+
 removeAllCardsBtn.addEventListener('click', function() {
     for(var i = 0; i < myCard.length; i++) {
     myCard[i].style.transform = 'translateX(150%)';
@@ -200,7 +240,6 @@ removeAllCardsBtn.addEventListener('click', function() {
 
 function incrementCard() {
   numberOfCards += 1;
-  console.log(numberOfCards)
 };
 
 function showRemoveAllCardsBtn() {
@@ -220,11 +259,17 @@ partTwo.addEventListener('mouseout', function() {
   removeAllCardsBtn.style.opacity = '0';
 })
 
+function resetGame() {
+  challengerOneGuessInput.value = "";
+  challengerTwoGuessInput.value = "";
+  createRandomNumber();
+}
+
 
 
 function clearGame() {
-  challengerTwoNameInput.value = "";
   challengerOneNameInput.value = "";
+  challengerTwoNameInput.value = "";
   challengerOneGuessInput.value = "";
   challengerTwoGuessInput.value = "";
   nameDisplayOne.innerText = "Challenger 1 Name";
@@ -233,22 +278,29 @@ function clearGame() {
   challengerTwoGuessDisplay.innerText = "—";
   challengerOneGuessComparison.innerText = "—";
   challengerTwoGuessComparison.innerText = "—";
+  minRangeDisplay.innerText = 1;
+  maxRangeDisplay.innerText = 100;
+  minValue = 1;
+  maxValue = 100;
+  minRangeInput.value = '';
+  maxRangeInput.value = '';
+  numberOfGuesses = 0;
 };
+
 
 
 function countGuesses() {
   numberOfGuesses += 1;
 
-  if (numberOfGuesses > 1) {
+  if (numberOfGuesses > 0) {
     guessValue = 'GUESSES';
   } else {
     guessValue = 'GUESS';
   }
-  console.log(numberOfGuesses);
 }
 
 function resetCountGuesses() {
-  numberOfGuesses = 1;
+  numberOfGuesses = 0;
   guessValue = 'GUESS';
 }
 
