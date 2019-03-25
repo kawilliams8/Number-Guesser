@@ -37,7 +37,7 @@ updateRangeButton.addEventListener("click", updateRange);
 submitButton.addEventListener("click", submitNamesGuesses);
 submitButton.addEventListener("click", timerStarted);
 window.addEventListener("load", createRandomNumber);
-// resetButton.addEventListener("click", resetGame);
+resetButton.addEventListener("click", resetGame);
 clearButton.addEventListener("click", clearGame);
 
 // Generate random number
@@ -259,6 +259,10 @@ partTwo.addEventListener('mouseout', function() {
   removeAllCardsBtn.style.opacity = '0';
 })
 
+// function resetGame() {
+  createRandomNumber();
+// }
+
 
 
 function clearGame() {
@@ -279,7 +283,6 @@ function clearGame() {
   minRangeInput.value = '';
   maxRangeInput.value = '';
   numberOfGuesses = 0;
-  createRandomNumber();
 };
 
 
