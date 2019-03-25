@@ -31,6 +31,12 @@ var timeDiff;
 var challengerOneGuessComparison = document.querySelector(".gues-note-one");
 var challengerTwoGuessComparison = document.querySelector(".gues-note-two");
 var resultsCard = document.querySelector(".card-hub");
+var errorOneNumber = document.querySelector(".error-1");
+var errorTwoNumber = document.querySelector(".error-2");
+var errorThreeName = document.querySelector(".error-3");
+var errorFourName = document.querySelector(".error-4");
+var errorFiveNumber = document.querySelector(".error-5");
+var errorSixNumber = document.querySelector(".error-6");
 
 //Event listeners
 updateRangeButton.addEventListener("click", updateRange);
@@ -39,6 +45,7 @@ submitButton.addEventListener("click", timerStarted);
 window.addEventListener("load", createRandomNumber);
 resetButton.addEventListener("click", resetGame);
 clearButton.addEventListener("click", clearGame);
+
 
 // Generate random number
 function createRandomNumber() {
@@ -51,9 +58,7 @@ function createRandomNumber() {
  console.log('RN: ' + randomNumber)
   }
 
-
 function updateRange() {
-
   if (minRangeInput.value != "" && maxRangeInput.value != "") {
       minValue = minRangeInput.value;
       maxValue = maxRangeInput.value;
@@ -75,11 +80,12 @@ function updateRange() {
       minRangeDisplay.innerText = 1;
       maxRangeDisplay.innerText = 100;
   }
-createRandomNumber()
+rangeErrors();
+createRandomNumber();
 };
 
-//Get names/guesses, then display names/guesses
-function submitNamesGuesses(){
+//Get names/guesses, check for errors, display names/guesses
+function submitNamesGuesses() {
   checkGuesses();
   showRemoveAllCardsBtn();
   nameDisplayOne.innerText = challengerOneNameInput.value;
@@ -266,8 +272,6 @@ function resetGame() {
   createRandomNumber();
 }
 
-
-
 function clearGame() {
   challengerOneNameInput.value = "";
   challengerTwoNameInput.value = "";
@@ -307,3 +311,33 @@ function resetCountGuesses() {
 
 
 
+function rangeErrors() {
+  if (minRangeInput.value == "") {
+    console.log("error1");
+    errorOneNumber.innerHTML += `<img src="images/error-icon.svg" alt="Input error" height="9px">
+      <p class="error-text"> Enter a number</p>`;
+  } else if (maxRangeInput.value == "") {
+    console.log("error2");
+    errorTwoNumber.innerHTML += `<img src="images/error-icon.svg" alt="Input error" height="9px">
+      <p class="error-text"> Enter a number</p>`;
+  };
+
+function gameplayErrors() {
+  if (challengerOneNameInput.innerText == "") {
+    console.log("error3");
+    errorThreeName.innerHTML += `<img src="images/error-icon.svg" alt="Input error" height="9px">
+      <p class="error-text"> Enter your name</p>`;
+  } else if (challengerTwoNameInput.value == "") {
+    console.log("error4");
+    errorFourName.innerHTML += `<img src="images/error-icon.svg" alt="Input error" height="9px">
+      <p class="error-text"> Enter your name</p>`;
+  } else if (challengerOneGuessInput.value == "") {
+      console.log("error5");
+   errorFiveNumber.innerHTML += `<img src="images/error-icon.svg" alt="Input error" height="9px">
+      <p class="error-text"> Enter a number</p>`;
+  } else if (challengerTwoGuessInput.value == "") {
+        console.log("error6");
+   errorSixNumber.innerHTML += `<img src="images/error-icon.svg" alt="Input error" height="9px">
+      <p class="error-text"> Enter a number</p>`;
+  };
+ }};
