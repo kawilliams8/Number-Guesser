@@ -1,8 +1,8 @@
 //Global variables
 var minRangeInput = document.querySelector(".min-range-input");
 var maxRangeInput = document.querySelector(".max-range-input");
-var minRangeDisplay = document.querySelector(".low-range-display"); //added later
-var maxRangeDisplay = document.querySelector(".high-range-display"); //added later
+var minRangeDisplay = document.querySelector(".low-range-display");
+var maxRangeDisplay = document.querySelector(".high-range-display");
 var updateRangeButton = document.querySelector(".update-btn");
 var challengerOneNameInput = document.querySelector(".name-input-one");
 var challengerOneGuessInput = document.querySelector(".guess-input-one");
@@ -22,7 +22,7 @@ var randomNumber;
 var minValue = 1;
 var maxValue = 100;
 var winner;
-var numberOfGuesses = 1;
+var numberOfGuesses = 0;
 var guessValue = 'GUESS';
 var numberOfCards = 0;
 var startTime;
@@ -161,7 +161,7 @@ function addCard() {
           <p>WINNER</p>
         </div>
         <div class="extensions">
-          <p class="extensions-text">${numberOfGuesses} ${guessValue}</p>
+          <p class="extensions-text">${numberOfGuesses + 1} ${guessValue}</p>
           <p class="extensions-text">${timeDiff} MINUTES</p>
           <span class="close-btn">&times;</span>
         </div>
@@ -188,10 +188,9 @@ function addCard() {
     }
   }
 
-  // timer function //////////////////////
 
   function timerStarted() {
-  if(numberOfGuesses === 2) {
+  if(numberOfGuesses === 1) {
     var date = new Date();
     var currentTime = date.getTime();
     startTime = currentTime;
@@ -203,18 +202,25 @@ function timerEnded() {
   var currentTime = date.getTime();
   endTime = currentTime;
   var milliSeconds = endTime - startTime;
-  var fixedMilliSeconds;
-  
-  if (isNaN(milliSeconds) === true) {
-    fixedMilliSeconds = 0;
+  var fixedStartTime;
+
+  if(numberOfGuesses === 0) {
+    fixedStartTime = endTime;
   } else {
-    fixedMilliSeconds = milliSeconds;
+    fixedStartTime = startTime;
   }
-  
-  var minutes = Math.floor(fixedMilliSeconds / 60000);
-  var seconds = ((fixedMilliSeconds % 60000) / 1000).toFixed(0);
+
+  var timeFixed = endTime - fixedStartTime;
+
+  var minutes = Math.floor(timeFixed / 60000);
+  var seconds = ((timeFixed % 60000) / 1000).toFixed(0);
   timeDiff = minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
+
+  console.log( startTime + ' ' + endTime)
  }
+
+
+
 
 
 removeAllCardsBtn.addEventListener('click', function() {
@@ -235,7 +241,6 @@ removeAllCardsBtn.addEventListener('click', function() {
 
 function incrementCard() {
   numberOfCards += 1;
-  console.log(numberOfCards)
 };
 
 function showRemoveAllCardsBtn() {
@@ -274,16 +279,15 @@ function clearGame() {
 function countGuesses() {
   numberOfGuesses += 1;
 
-  if (numberOfGuesses > 1) {
+  if (numberOfGuesses > 0) {
     guessValue = 'GUESSES';
   } else {
     guessValue = 'GUESS';
   }
-  console.log(numberOfGuesses);
 }
 
 function resetCountGuesses() {
-  numberOfGuesses = 1;
+  numberOfGuesses = 0;
   guessValue = 'GUESS';
 }
 
