@@ -10,6 +10,10 @@ body {
   background-color: #f7f7f7;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .part-one {
   background-color: #f7f7f7;
   height: 1285px;
@@ -85,12 +89,12 @@ input {
 
 input,
 p {
-  margin-bottom: 1.3em;
+  margin-bottom: .3em;
   color: #404041;
 }
 
 h4 {
-  margin-bottom: 0.8em;
+/*  margin-bottom: 0.8em;*/
 }
 
 .btn {
@@ -118,17 +122,17 @@ label {
 }
 
 .error-box {
-  height: 9px;
+  height: 12px;
   width: 100%;
-  background-color: #e8e8e8;
+  background-color: grey;
   display: inline-flex;
 }
 
 .error-text {
-  font-size: 9px;
-  line-height: 9px;
+  font-size: 12px;
+  line-height: 12px;
   color: #DD1972;
-  font-weight: 700;
+  font-weight: 300;
 }
 
 /* the gaming section starts here */
@@ -333,16 +337,16 @@ header {
   }
 
   .error-box {
-    height: 9px;
+    height: 12px;
     width: 100%;
     display: inline-flex;
 }
 
- .error-text {
-   font-size: 9px;
-   line-height: 9px;
-   color: #DD1972;
-   font-weight: 700;
+  .error-text {
+    font-size: 16px;
+    line-height: 16px;
+    color: #DD1972;
+    font-weight: 300;
 }
 
   .set-range-section-part-one,
