@@ -1,5 +1,5 @@
 * {
-	margin: 0px;
+  margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
 }
@@ -276,67 +276,65 @@ label {
 }
 
 .latest-score-section-parts {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  .remove-all-btn {
-    width: 80px;
-    height: 25px;
-    border-radius: 5px;
-    border: 1px solid rgba(0,0,0,0.3);
-    background-color: rgba(255,255,255,0.4);
-    color: rgba(0,0,0,0.6);
-    cursor: pointer;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    outline: none;
-    transition: 0.2s;
-    display: none;
-  }
+.remove-all-btn {
+  width: 80px;
+  height: 25px;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.3);
+  background-color: rgba(255,255,255,0.4);
+  color: rgba(0,0,0,0.6);
+  cursor: pointer;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  outline: none;
+  transition: 0.2s;
+  display: none;
+}
 
-  .remove-all-btn:hover {
-    border: 1px solid rgba(255,0,0,0.8);
-    background-color: rgba(255,255,255,0.6);
-    color: rgba(255,0,0,1);
-    box-shadow: 0 0 2px 0 gray;
-  }
+.remove-all-btn:hover {
+  border: 1px solid rgba(255,0,0,0.8);
+  background-color: rgba(255,255,255,0.6);
+  color: rgba(255,0,0,1);
+  box-shadow: 0 0 2px 0 gray;
+}
 
-  .remove-all-btn:active {
-    width: 78px;
-    height: 23px;
-  }
+.remove-all-btn:active {
+  width: 78px;
+  height: 23px;
+}
 
 @media only screen and (min-width: 736px) {
-  main {
-    display: flex;
-  }
+main {
+  display: flex;
+}
 
-  
+.heading-section {
+  height: 50px;
+  width: 100%;
+}
 
-  .heading-section {
-    height: 50px;
-    width: 100%;
-  }
+.first-heading {
+  font-size: 3em;
+  color: #DD1972;
+}
 
-  .first-heading {
-    font-size: 3em;
-    color: #DD1972;
-  }
+.header-line {
+  height: 1px;
+  width: 410px;
+  margin-top: 18px;
+}
 
-  .header-line {
-    height: 1px;
-    width: 410px;
-    margin-top: 18px;
-  }
-
-  .second-heading {
-    font-size: 1.1em;
-    margin-top: 7px;
-    width: 280px;
-  }
+.second-heading {
+  font-size: 1.1em;
+  margin-top: 7px;
+  width: 280px;
+}
 
 /*header */
 
@@ -353,141 +351,142 @@ header {
   z-index: 9;
 }
 
-  /*body starts here */
+/*body starts here */
 
-  .part-one,
-  .part-two {
-    width: 50%;
-    height: 713px;
-    margin-top: 100px;
-  }
-
-  .part-two {
-    overflow: scroll;
-    height: 720px;
-  }
-
-  .error-box {
-    height: 9px;
-    width: 100%;
-    display: inline-flex;
+.part-one,
+.part-two {
+  width: 50%;
+  height: 713px;
+  margin-top: 100px;
 }
 
- .error-text {
-   font-size: 9px;
-   line-height: 9px;
-   color: #DD1972;
-   font-weight: 700;
+.part-two {
+  overflow: scroll;
+  height: 720px;
 }
 
-  .set-range-section-part-one,
-  .set-range-section-part-two,
-  .set-range-section-part-three {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    height: 70px;
-  }
+.error-box {
+  height: 9px;
+  width: 100%;
+  display: inline-flex;
+}
 
-  .set-range-section-part-three {
-    height: 70px;
-    width: 20%;
-    padding-bottom: 14px;
-    display: flex;
-    align-items: center;
-  }
+.error-text {
+  font-size: 9px;
+  line-height: 9px;
+  color: #DD1972;
+  font-weight: 700;
+}
+
+.set-range-section-part-one,
+.set-range-section-part-two,
+.set-range-section-part-three {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 70px;
+}
+
+.set-range-section-part-three {
+  height: 70px;
+  width: 20%;
+  padding-bottom: 14px;
+  display: flex;
+  align-items: center;
+}
  
-  input {
-    width: 95%
-  }
+  
+input {
+  width: 95%
+}
 
-  .set-range-section-body {
-    width: 100%;
-    display: flex;
-    margin-top: -10px;
-  }
+.set-range-section-body {
+  width: 100%;
+  display: flex;
+  margin-top: -10px;
+}
 
-  .set-range-section {
-    height: 100px;
-  }
+.set-range-section {
+  height: 100px;
+}
 
-  .update-btn {
-    width: 110%;
-    height: 30px;
-    max-width: 100px;
-  }
+.update-btn {
+  width: 110%;
+  height: 30px;
+  max-width: 100px;
+}
 
-  .name-input-one
-  .guess-input-one {
-    width: 50%;
-  }
+.name-input-one
+.guess-input-one {
+  width: 50%;
+}
 
-  .playing-section-part {
-    display: flex;
-    height: 80px;
-  }
+.playing-section-part {
+  display: flex;
+  height: 80px;
+}
 
-  .playing-section-part-1 {
-    width: 70%;
-  }
+.playing-section-part-1 {
+  width: 70%;
+}
 
-  .playing-section-part-2 {
-    width: 30%;
-  }
+.playing-section-part-2 {
+  width: 30%;
+}
 
-  .playing-section-part-buttons {
-    display: flex;
-    justify-content: space-around;
-    height: 90px;
-    margin-top: -10px;
-  }
+.playing-section-part-buttons {
+  display: flex;
+  justify-content: space-around;
+  height: 90px;
+  margin-top: -10px;
+}
 
-  button.game-btn {
-     width: 30%;
-  }
+button.game-btn {
+   width: 30%;
+}
 
-  .playing-section {
-    height: 330px;
-  }
+.playing-section {
+  height: 330px;
+}
 
-  .card {
-    height: 165px;
-    width: 88%;
-    transition: 0.3s;
-    transform: translatex(-150%);
-  }
+.card {
+  height: 165px;
+  width: 88%;
+  transition: 0.3s;
+  transform: translatex(-150%);
+}
 
-  .card-challengers-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 20px;
-    padding-top: 10px;
-  }
+.card-challengers-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 20px;
+  padding-top: 10px;
+}
 
-  /* latest score starts here*/
+/* latest score starts here*/
 
- .latest-score-section {
+.latest-score-section {
   height: 250px;
   position: relative;
- }
+}
 
- .latest-score-section-parts-container {
+.latest-score-section-parts-container {
   display: flex;
   justify-content: space-between;
   width: 100%;
   margin-top: 1.2em;
- }
+}
 
- .latest-score-section-parts {
-    display: flex;
-    justify-content: center;
-    width: 45%;
-  }
+.latest-score-section-parts {
+  display: flex;
+  justify-content: center;
+  width: 45%;
+}
 
-  .bottom-line {
+.bottom-line {
   background-color: rgba(0,0,0,0.2);
   width: 2px;
   height: 75%;
