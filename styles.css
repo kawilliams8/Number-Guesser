@@ -94,7 +94,7 @@ p {
 }
 
 h4 {
-/*  margin-bottom: 0.8em;*/
+  margin-bottom: 0.8em;
 }
 
 .btn {
@@ -124,13 +124,12 @@ label {
 .error-box {
   height: 12px;
   width: 100%;
-  background-color: grey;
   display: inline-flex;
 }
 
 .error-text {
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 9px;
+  line-height: 9px;
   color: #DD1972;
   font-weight: 300;
 }
@@ -343,8 +342,8 @@ header {
 }
 
   .error-text {
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 9px;
+    line-height: 9px;
     color: #DD1972;
     font-weight: 300;
 }
@@ -378,7 +377,7 @@ header {
   }
 
   .set-range-section {
-    height: 100px;
+    height: 105px;
   }
 
   .update-btn {
