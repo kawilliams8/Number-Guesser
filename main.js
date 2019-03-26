@@ -1,8 +1,8 @@
 //Global variables
 var minRangeInput = document.querySelector(".min-range-input");
 var maxRangeInput = document.querySelector(".max-range-input");
-var minRangeDisplay = document.querySelector(".low-range-display"); //added later
-var maxRangeDisplay = document.querySelector(".high-range-display"); //added later
+var minRangeDisplay = document.querySelector(".low-range-display");
+var maxRangeDisplay = document.querySelector(".high-range-display");
 var updateRangeButton = document.querySelector(".update-btn");
 var challengerOneNameInput = document.querySelector(".name-input-one");
 var challengerOneGuessInput = document.querySelector(".guess-input-one");
@@ -168,20 +168,25 @@ function clearGame() {
 };
 
 function rangeErrors() {
-  if (minRangeInput.value == '' || maxRangeInput.value == '')
-    { errorOne.classList.remove('hidden'); 
+  if (minRangeInput.value === "" || maxRangeInput.value === "")
+    { errorOne.classList.remove("hidden");
   }
-  if (minRangeInput.value != '' && maxRangeInput.value != '')
-    { errorOne.classList.add('hidden');
+  if (minRangeInput.value !== "" && maxRangeInput.value !== "")
+    { errorOne.classList.add("hidden");
   }
 };
 
 function gameplayErrors() {
-  if (challengerOneNameInput.value == "" || challengerOneGuessInput.value == "");
-    { errorTwo.classList.remove('hidden');
+  if (challengerOneNameInput.value === "" || challengerOneGuessInput.value === "")
+    { errorTwo.classList.remove("hidden");
   }
-  if (challengerOneNameInput.value != '' && challengerOneGuessInput.value != '');
-    { errorTwo.classList.add('hidden'); 
+  if (challengerOneNameInput.value !== "" && challengerOneGuessInput.value !== "")
+    { errorTwo.classList.add("hidden");
+  }
+  if (challengerTwoNameInput.value === "" || challengerTwoGuessInput.value === "")
+    { errorThree.classList.remove("hidden");
+  }
+  if (challengerOneNameInput.value !== "" && challengerTwoGuessInput.value !== "")
+    { errorThree.classList.add("hidden");
   }
 };
- 
