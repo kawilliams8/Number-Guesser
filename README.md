@@ -21,7 +21,8 @@ Number Guesser requires no installation.
 Two comps were provided for students.
 
 Desktop version:
-
+![Desktop Number Guesser](https://github.com/kawilliams8/Number-Guesser/blob/master/week2-numberguesser-01.jpg)
+![Mobile Number Guesser](https://github.com/kawilliams8/Number-Guesser/blob/master/week2-numberguesser-03.jpg)
 
 [Project Instructions](https://gist.github.com/kawilliams8/78d78c6683cf615dcccf0cf31b11db33)
 
