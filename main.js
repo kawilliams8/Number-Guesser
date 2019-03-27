@@ -110,8 +110,10 @@ function checkGuesses() {
     resetCountGuesses();
   } else if (challengerOneGuessInput.value > randomNumber) {
     challengerOneGuessComparison.innerText = 'that\’s too high';
+    countGuesses();
   } else if (challengerOneGuessInput.value < randomNumber) {
     challengerOneGuessComparison.innerText = 'that\’s too low';
+    countGuesses();
   }
   
   
@@ -125,8 +127,10 @@ function checkGuesses() {
     resetCountGuesses();
   } else if (challengerTwoGuessInput.value > randomNumber) {
     challengerTwoGuessComparison.innerText = 'that\’s too high';
+    countGuesses();
   } else if (challengerTwoGuessInput.value < randomNumber) {
      challengerTwoGuessComparison.innerText = 'that\’s too low';
+     countGuesses();
   }
 
 };
@@ -155,8 +159,8 @@ resultsCard.innerHTML +=
         <p>WINNER</p>
       </div>
       <div class="extensions">
-        <p class="extensions-text">${numberOfGuesses + 1} ${guessValue}</p>
-        <p class="extensions-text">${timeDiff} MINUTES</p>
+        <p class="extensions-text"><span class="bold-extensions">${numberOfGuesses + 1}</span> ${guessValue}</p>
+        <p class="extensions-text"><span class="bold-extensions">${timeDiff}</span> MINUTES</p>
         <span class="close-btn">&times;</span>
       </div>
   </div>`  

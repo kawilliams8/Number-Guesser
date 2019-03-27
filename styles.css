@@ -246,6 +246,10 @@ label {
   justify-content: space-between;
 }
 
+.bold-extensions {
+  font-weight: bold;
+}
+
 .close-btn {
   width: 18px;
   height: 18px;
