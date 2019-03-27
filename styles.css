@@ -310,6 +310,7 @@ label {
 }
 
 @media only screen and (min-width: 736px) {
+
 main {
   display: flex;
 }
@@ -535,7 +536,7 @@ input {
 }
 
 button.game-btn {
-   width: 30%;
+  width: 30%;
 }
 
 
