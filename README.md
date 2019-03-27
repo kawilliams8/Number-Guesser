@@ -23,6 +23,7 @@ Two comps were provided for students.
 Desktop version:
 ![Desktop layout](https://github.com/kawilliams8/Number-Guesser/blob/master/week2-numberguesser-01.jpg)
 
+
 Mobile version:
 ![Mobile layout](https://github.com/kawilliams8/Number-Guesser/blob/master/week2-numberguesser-03.jpg)
 
