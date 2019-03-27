@@ -221,10 +221,6 @@ function timerEnded() {
 
  }
 
-
-
-
-
 removeAllCardsBtn.addEventListener('click', function() {
     for(var i = 0; i < myCard.length; i++) {
     myCard[i].style.transform = 'translateX(150%)';
