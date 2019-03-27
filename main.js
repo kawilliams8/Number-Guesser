@@ -97,46 +97,38 @@ function checkGuesses() {
     challengerOneGuessComparison.innerText = "It's a tie!";
     challengerTwoGuessComparison.innerText = "It's a tie!";
     countGuesses();
-  } else if (challengerOneGuessInput.value == randomNumber) {
-    challengerOneGuessComparison.innerText = "Boom!";
+  }
+  
+  
+  if (challengerOneGuessInput.value == randomNumber) {
+    challengerOneGuessComparison.innerText = "BOOM!";
     winnerOne();
     createRandomNumber();
     incrementCard();
     timerEnded();
     addCard();
     resetCountGuesses();
-  } else if (challengerTwoGuessInput.value == randomNumber) {
-    challengerTwoGuessComparison.innerText = "Boom!";
+  } else if (challengerOneGuessInput.value > randomNumber) {
+    challengerOneGuessComparison.innerText = 'that\’s too high';
+  } else if (challengerOneGuessInput.value < randomNumber) {
+    challengerOneGuessComparison.innerText = 'that\’s too low';
+  }
+  
+  
+  if (challengerTwoGuessInput.value == randomNumber) {
+    challengerTwoGuessComparison.innerText = "BOOM!";
     winnerTwo();
     createRandomNumber();
     incrementCard();
     timerEnded();
     addCard();
     resetCountGuesses();
-  } else if (challengerOneGuessInput.value > randomNumber && 
-    challengerTwoGuessInput.value > randomNumber) {
-    challengerOneGuessComparison.innerText = "that's too high";
-    challengerTwoGuessComparison.innerText = "that's too high";
-    countGuesses();
-  } else if (challengerOneGuessInput.value > randomNumber && 
-    challengerTwoGuessInput.value < randomNumber) {
-    challengerOneGuessComparison.innerText = "that's too high";
-    challengerTwoGuessComparison.innerText = "that's too low";
-    countGuesses();
-  } else if (challengerOneGuessInput.value < randomNumber && 
-    challengerTwoGuessInput.value < randomNumber) {
-    challengerOneGuessComparison.innerText = "that's too low";
-    challengerTwoGuessComparison.innerText = "that's too low";
-    countGuesses()
-  } else if (challengerOneGuessInput.value < randomNumber && 
-    challengerTwoGuessInput.value > randomNumber) {
-    challengerOneGuessComparison.innerText = "that's too low";
-    challengerTwoGuessComparison.innerText = "that's too high";
-    countGuesses()
   } else if (challengerTwoGuessInput.value > randomNumber) {
-    challengerTwoGuessComparison.innerText = "that's too high";
-    countGuesses()
-  };
+    challengerTwoGuessComparison.innerText = 'that\’s too high';
+  } else if (challengerTwoGuessInput.value < randomNumber) {
+     challengerTwoGuessComparison.innerText = 'that\’s too low';
+  }
+
 };
 
 //result card with winner, game stats
