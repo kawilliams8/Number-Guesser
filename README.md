@@ -1,4 +1,4 @@
-# Number-Guesser
+# Number Guesser
 Number Guesser - Turing Mod 1 FEE project (Hindreen and Katie)
 
 Number Guesser is the second project in Mod 1 of the Front End Engineering program at the Turing School of Software and Design. 
