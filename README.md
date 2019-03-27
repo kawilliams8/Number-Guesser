@@ -14,9 +14,6 @@ The project's goal is to create the HTML, CSS and JavaScript files necessary to 
 
 During gameplay, both players attempt to guess a secret number created by a random number generator. When neither guesses the number correctly, players receive feedback through hints that they were too high or too low. When one player guesses the current secret number, various elements within the document change to reflect the win. A 'card' appears on the right side of the screen to preserve the results of the game. At that time, a new secret number is generated and a new game can begin.
 
-## Installation
-Number Guesser requires no installation.
-
 ## Comps
 Two comps were provided for students.
 
@@ -37,3 +34,6 @@ Mobile version:
 
 [GitHub Pages project page](https://kawilliams8.github.io/Number-Guesser/)
 
+
+## Installation
+Number Guesser requires no installation.
