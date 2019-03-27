@@ -242,19 +242,11 @@ function incrementCard() {
 function showRemoveAllCardsBtn() {
   if (numberOfCards > 1) {
     removeAllCardsBtn.style.display = 'block';
-    removeAllCardsBtn.style.opacity = '0';
   } else {
     removeAllCardsBtn.style.display = 'none';
   } 
 }
 
-partTwo.addEventListener('mouseover', function() {
-  removeAllCardsBtn.style.opacity = '1';
-})
-
-partTwo.addEventListener('mouseout', function() {
-  removeAllCardsBtn.style.opacity = '0';
-})
 
 function resetGame() {
   challengerOneGuessInput.value = "";
