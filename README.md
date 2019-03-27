@@ -4,8 +4,8 @@ Number Guesser - Turing Mod 1 FEE project (Hindreen and Katie)
 Number Guesser is the second project in Mod 1 of the Front End Engineering program at the Turing School of Software and Design. 
 
 ## Authors
-Hindreen F. Abdullah - https://github.com/hndfaw - [hndfaw](https://github.com/https://github.com/hndfaw)
-Katherine A. Williams - https://github.com/kawilliams8 - [kawilliams8](https://github.com/kawilliams8)
+*Hindreen F. Abdullah - https://github.com/hndfaw - [hndfaw](https://github.com/https://github.com/hndfaw)
+*Katherine A. Williams - https://github.com/kawilliams8 - [kawilliams8](https://github.com/kawilliams8)
 
 ## Learning Goals
 The Number Guesser lesson is designed to implement many JavaScript principles taught during the first three weeks at the Turing School. The lesson also builds on the Mod 0 and previous Mod 1 projects' CSS complexities, requiring our first significant adaptation for various screen sizes with media queries and flexbox. Number Guesser inherently requires proficient use of Git and GitHub to track feature changes.
