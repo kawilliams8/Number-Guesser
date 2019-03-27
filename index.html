@@ -24,12 +24,18 @@
         <h4>Set Range</h4>
         <div class="set-range-section-body">
         <div class="set-range-section-part-one">
-    			<label for="" >Min Range</label>
-    			<input type="text" class="min-range-input">
+    			<label for="">Min Range</label>
+    			<input type="number" pattern="\d*" class="min-range-input">
+          <div class="error-box error-one hidden" height="12px">
+            <img src="images/error-icon.svg" alt="Input error" height="9px">
+            <p class="error-text">Enter range numbers</p>
+          </div>
         </div>
         <div class="set-range-section-part-two">
   			  <label for="" type="text">Max Range</label>
-    			<input type="text" class="max-range-input">
+    			<input type="number" pattern="\d*" class="max-range-input">
+          <div class="error-box" height="12px">
+          </div>
         </div>
         <div class="set-range-section-part-three">
     			<button class="btn update-btn">UPDATE</button>
@@ -43,10 +49,16 @@
         <div class="playing-section-part-1">
     			<label for="">Name</label>
     			<input class="name-input-one" type="text">
+          <div class="error-box error-two hidden" height="12px">
+            <img src="images/error-icon.svg" alt="Input error" height="9px">
+            <p class="error-text">Enter name and guess</p>
+          </div>
         </div>
         <div class="playing-section-part-2">
     			<label for="">Guess</label>
-    			<input class="guess-input-one" type="text">
+    			<input class="guess-input-one" type="number" pattern="\d*">
+            <div class="error-box" height="12px">
+            </div>
         </div>
       </div>
 			<h4>Challenger 2</h4>
@@ -54,10 +66,16 @@
         <div class="playing-section-part-1">
     			<label for="">Name</label>
     			<input class="name-input-two" type="text">
+            <div class="error-box error-three hidden" height="12px">
+            <img src="images/error-icon.svg" alt="Input error" height="9px">
+            <p class="error-text">Enter name and guess</p>
+          </div>
         </div>
         <div class="playing-section-part-2">
     			<label for="">Guess</label>
-    			<input class="guess-input-two" type="text">
+    			<input class="guess-input-two" type="number" pattern="\d*">
+            <div class="error-box" height="12px">
+            </div>
         </div>
       </div>
         <div class="playing-section-part-buttons">
