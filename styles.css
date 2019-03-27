@@ -241,7 +241,6 @@ label {
 
 .extensions {
   display: flex;
-  height: 33px;
   padding-top: 5px;
   width: 100%;
   justify-content: space-between;
