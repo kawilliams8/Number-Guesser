@@ -89,7 +89,8 @@ function submitNamesGuesses() {
   var guessTwoDisplay = challengerTwoGuessInput.value;
   challengerOneGuessDisplay.innerText = guessOneDisplay;
   challengerTwoGuessDisplay.innerText = guessTwoDisplay;
-}
+
+};
 
 function checkGuesses() {
   if (challengerOneGuessInput.value == randomNumber && 
@@ -110,10 +111,10 @@ function checkGuesses() {
     resetCountGuesses();
   } else if (challengerOneGuessInput.value > randomNumber) {
     challengerOneGuessComparison.innerText = 'that\’s too high';
-    countGuesses();
+    // countGuesses();
   } else if (challengerOneGuessInput.value < randomNumber) {
     challengerOneGuessComparison.innerText = 'that\’s too low';
-    countGuesses();
+    // countGuesses();
   }
   
   
@@ -127,10 +128,14 @@ function checkGuesses() {
     resetCountGuesses();
   } else if (challengerTwoGuessInput.value > randomNumber) {
     challengerTwoGuessComparison.innerText = 'that\’s too high';
-    countGuesses();
+    // countGuesses();
   } else if (challengerTwoGuessInput.value < randomNumber) {
      challengerTwoGuessComparison.innerText = 'that\’s too low';
-     countGuesses();
+    //  countGuesses();
+  }
+
+  if(challengerOneGuessInput.value != randomNumber && challengerTwoGuessInput.value != randomNumber) {
+    countGuesses();
   }
 
 };
@@ -283,7 +288,7 @@ function countGuesses() {
 }
 
 function resetCountGuesses() {
-  numberOfGuesses = 0;
+  numberOfGuesses = -1;
   guessValue = 'GUESS';
 }
 
