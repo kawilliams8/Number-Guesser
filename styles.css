@@ -153,6 +153,11 @@ label {
   color: #404041;
 }
 
+.low-range-display,
+.high-range-display {
+  font-weight: 700;
+}
+
 .game-btn {
   display: block;
   width: 100%;
