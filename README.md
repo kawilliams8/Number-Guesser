@@ -26,10 +26,10 @@ Mobile version:
 
 ## Our results
 Desktop version:
-![Desktop layout](copy image link here)
+![Desktop layout](https://github.com/kawilliams8/Number-Guesser/blob/master/NumberGuesser-desktop.png)
 
 Mobile version:
-![Mobile layout](copy image link here)
+![Mobile layout](https://github.com/kawilliams8/Number-Guesser/blob/master/NumberGuesser-mobile.png))
 
 
 [GitHub Pages project page](https://kawilliams8.github.io/Number-Guesser/)
