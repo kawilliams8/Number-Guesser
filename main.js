@@ -101,7 +101,7 @@ function checkGuesses() {
   }
   
   
-  if (challengerOneGuessInput.value == randomNumber) {
+  if (challengerOneGuessInput.value == randomNumber && challengerOneGuessInput.value != challengerTwoGuessInput.value) {
     challengerOneGuessComparison.innerText = "BOOM!";
     winnerOne();
     createRandomNumber();
@@ -111,14 +111,12 @@ function checkGuesses() {
     resetCountGuesses();
   } else if (challengerOneGuessInput.value > randomNumber) {
     challengerOneGuessComparison.innerText = 'that\’s too high';
-    // countGuesses();
   } else if (challengerOneGuessInput.value < randomNumber) {
     challengerOneGuessComparison.innerText = 'that\’s too low';
-    // countGuesses();
   }
   
   
-  if (challengerTwoGuessInput.value == randomNumber) {
+  if (challengerTwoGuessInput.value == randomNumber && challengerOneGuessInput.value != challengerTwoGuessInput.value) {
     challengerTwoGuessComparison.innerText = "BOOM!";
     winnerTwo();
     createRandomNumber();
@@ -128,10 +126,8 @@ function checkGuesses() {
     resetCountGuesses();
   } else if (challengerTwoGuessInput.value > randomNumber) {
     challengerTwoGuessComparison.innerText = 'that\’s too high';
-    // countGuesses();
   } else if (challengerTwoGuessInput.value < randomNumber) {
      challengerTwoGuessComparison.innerText = 'that\’s too low';
-    //  countGuesses();
   }
 
   if(challengerOneGuessInput.value != randomNumber && challengerTwoGuessInput.value != randomNumber) {
