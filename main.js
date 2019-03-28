@@ -21,7 +21,6 @@ var partTwo = document.querySelector('.part-two');
 var challengerOneGuessComparison = document.querySelector(".gues-note-one");
 var challengerTwoGuessComparison = document.querySelector(".gues-note-two");
 var resultsCard = document.querySelector(".card-hub");
-
 var errorOne = document.querySelector(".error-one");
 var errorTwo = document.querySelector(".error-two");
 var errorThree = document.querySelector(".error-three");
@@ -40,7 +39,6 @@ var winner;
 updateRangeButton.addEventListener("click", updateRange);
 updateRangeButton.addEventListener("click", rangeErrors);
 submitButton.addEventListener("click", gameplayErrors);
-submitButton.addEventListener("click", submitNamesGuesses);
 submitButton.addEventListener("click", timerStarted);
 window.addEventListener("load", createRandomNumber);
 resetButton.addEventListener("click", resetGame);
@@ -323,6 +321,10 @@ function gameplayErrors() {
   }
   if (challengerOneNameInput.value !== "" && challengerTwoGuessInput.value !== "")
     { errorThree.classList.add("hidden");
+  }
+
+  if(challengerOneNameInput.value !== "" && challengerOneGuessInput.value !== "" && challengerTwoNameInput.value !== "" && challengerTwoGuessInput.value !== "") {
+    submitNamesGuesses();
   }
 };
 
