@@ -130,6 +130,7 @@ label {
   line-height: 9px;
   color: #DD1972;
   font-weight: 300;
+  margin-left: 5px;
 }
 
 /* the gaming section starts here */
@@ -163,7 +164,7 @@ label {
 
 .latest-score-section {
   border: 1px solid #D0D2D3;
-  height: 380px;
+  height: 450px;
   padding: 10px;
   width: 95%;
   margin-right: auto;
@@ -187,7 +188,7 @@ label {
   height: 2px;
   margin-bottom: 10px;
   position: absolute;
-  top: 49%;
+  top: 54%;
 }
 
 .guess-output {
@@ -195,7 +196,7 @@ label {
   font-size: 95px;
   color: #F74D9B;
   margin-bottom: -10px;
-  margin-top: -30px;
+  margin-top: -18px;
   background-color: transparent;
 }
 
@@ -241,10 +242,13 @@ label {
 
 .extensions {
   display: flex;
-  height: 33px;
   padding-top: 5px;
   width: 100%;
   justify-content: space-between;
+}
+
+.bold-extensions {
+  font-weight: bold;
 }
 
 .close-btn {
@@ -279,6 +283,7 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 }
 
 .remove-all-btn {
@@ -386,12 +391,7 @@ header {
     display: inline-flex;
 }
 
-  .error-text {
-    font-size: 9px;
-    line-height: 9px;
-    color: #DD1972;
-    font-weight: 300;
-}
+
 
   .set-range-section-part-one,
   .set-range-section-part-two,
@@ -561,7 +561,6 @@ button.game-btn {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 1.2em;
 }
 
 .latest-score-section-parts {
