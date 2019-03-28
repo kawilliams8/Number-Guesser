@@ -130,6 +130,7 @@ label {
   line-height: 9px;
   color: #DD1972;
   font-weight: 300;
+  margin-left: 5px;
 }
 
 /* the gaming section starts here */
@@ -389,12 +390,7 @@ header {
     display: inline-flex;
 }
 
-  .error-text {
-    font-size: 9px;
-    line-height: 9px;
-    color: #DD1972;
-    font-weight: 300;
-}
+
 
   .set-range-section-part-one,
   .set-range-section-part-two,
