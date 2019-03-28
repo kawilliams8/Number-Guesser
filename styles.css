@@ -164,7 +164,7 @@ label {
 
 .latest-score-section {
   border: 1px solid #D0D2D3;
-  height: 380px;
+  height: 450px;
   padding: 10px;
   width: 95%;
   margin-right: auto;
@@ -188,7 +188,7 @@ label {
   height: 2px;
   margin-bottom: 10px;
   position: absolute;
-  top: 49%;
+  top: 54%;
 }
 
 .guess-output {
@@ -196,7 +196,7 @@ label {
   font-size: 95px;
   color: #F74D9B;
   margin-bottom: -10px;
-  margin-top: -30px;
+  margin-top: -18px;
   background-color: transparent;
 }
 
@@ -283,6 +283,7 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 20px;
 }
 
 .remove-all-btn {
@@ -560,7 +561,6 @@ button.game-btn {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 1.2em;
 }
 
 .latest-score-section-parts {
